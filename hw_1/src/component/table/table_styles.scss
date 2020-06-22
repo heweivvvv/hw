@@ -1,0 +1,22 @@
+.view {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border: 1px solid #666;
+    flex-direction: column;;
+
+    .thead{
+        height: 40px;
+        width: 100%;
+    }
+
+    .tbody{
+        height: calc(100% - 80px);
+        width: 100%;
+    }
+
+    .tfoot{
+        height: 40px;
+        width: 100%;
+    }
+}

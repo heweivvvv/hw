@@ -1,0 +1,28 @@
+.view {
+    width: 100%;
+    height: 100%;
+
+    .header {
+        width: 100%;
+        height: 40px;
+        background-color: black;
+
+        .menuLink {
+            text-decoration: none;
+            color: antiquewhite;
+            line-height: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 0 20px;
+        }
+
+        .menuLinkActive {
+            text-decoration: aqua;
+        }
+    }
+
+    .content {
+        width: 100%;
+        height: calc(100% - 40px);
+    }
+}

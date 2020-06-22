@@ -1,0 +1,33 @@
+.view {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5px 0;
+
+    .payInfo {
+        display: flex;
+        flex-direction: column;
+
+        .payDesc {
+            font-size: 14px;
+        }
+
+        .payType {
+            font-size: 12px;
+        }
+
+        .payDate {
+            font-size: 12px;
+        }
+    }
+
+    .payMenoy {
+        font-size: 20px;
+        margin: auto 0;
+    }
+
+    .edit {
+
+    }
+}

@@ -1,0 +1,59 @@
+.view {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        height: 40%;
+        width: 100%;
+
+        .titleSVG {
+            width: 100%;
+        }
+    }
+
+    .login {
+        height: 60%;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+
+        .labelInput {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            line-height: 32px;
+            margin-top: 10px;
+
+            .labelDom {
+                width: 20%;
+            }
+
+            .inputDom {
+                width: 50%;
+                border-radius: 5px;
+            }
+
+            .checkCode {
+                width: 20%;
+                font-size: 18px;
+                letter-spacing: 6px;
+                margin: auto;
+            }
+        }
+
+        .bnts {
+            width: 100%;
+            display: flex;
+            margin-top: 20px;
+            justify-content: center;
+
+            button{
+                height: 32px;
+                padding: 0 30px;
+            }
+        }
+    }
+}

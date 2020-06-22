@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="388c7b1d-833d-46d7-b08e-2c6be9fd5dd3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1dAk95bxfdx9YGG22ToC7NWRxgF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/logined" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\demo\hw_1\src\views\logined" />
+      <recent name="F:\demo\hw_1\src\views\login" />
+      <recent name="F:\demo\hw_1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\demo\hw_1\src\component\table\thead" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="388c7b1d-833d-46d7-b08e-2c6be9fd5dd3" name="Default Changelist" comment="" />
+      <created>1591875131918</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591875131918</updated>
+      <workItem from="1591875138449" duration="1010000" />
+      <workItem from="1591922134785" duration="754000" />
+      <workItem from="1592291796230" duration="4309000" />
+      <workItem from="1592441171322" duration="599000" />
+      <workItem from="1592527061853" duration="1210000" />
+      <workItem from="1592615854155" duration="38795000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1749" y="155" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592620259268">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1749" y="155" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592620259268" />
+    <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592809860058">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592809860058" />
+    <state x="1969" y="246" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592639379797" />
+    <state x="455" y="237" key="FileChooserDialogImpl" timestamp="1592793606219">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="455" y="237" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592793606219" />
+    <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592296072669" />
+    <state x="184" y="5" key="SettingsEditor" timestamp="1592617224560">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="5" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592617224560" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1592792929760">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592792929760" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592794698917">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592794698917" />
+  </component>
+</project>
