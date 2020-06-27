@@ -4,11 +4,10 @@ import styles from './styles.scss'
 const component = ({
                        id,
                        payMenoy,
-                       createDate,
+                       payDate,
                        type,
                        payDesc,
-                       toEdit
-
+                       goDetail
 
                    }) => {
     return (
@@ -21,14 +20,14 @@ const component = ({
                     {type}
                 </div>
                 <div className={styles.payDate}>
-                    {createDate}
+                    {payDate}
                 </div>
             </div>
             <div className={styles.payMenoy}>
                 ￥{payMenoy}
             </div>
             <div className={styles.edit}>
-                <button onClick={() => toEdit(id)}>编辑</button>
+                <button onClick={() => goDetail(id)}>详情</button>
             </div>
         </div>
     )

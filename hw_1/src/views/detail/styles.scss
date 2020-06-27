@@ -1,0 +1,55 @@
+.view {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    margin-top: 20px;
+
+    .content {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        border: 1px solid slateblue;
+        padding: 10px;
+        border-radius: 5px;
+
+        .recodeInfo {
+            display: flex;
+            width: 100%;
+            margin: 5px auto;
+            justify-content: space-between;
+            line-height: 32px;
+
+            .recodeInfoName {
+                width: 20%;
+                text-align: center;
+            }
+
+            .recodeInfoValue {
+                width: 70%;
+                text-align: center;
+                border: 1px solid royalblue;
+                border-radius: 3px;
+            }
+
+
+        }
+    }
+
+    .btns {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        button{
+            width: 84px;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid deepskyblue;
+            margin: 0 10px;
+            background-color: deepskyblue;
+            color: #ffffff;
+        }
+    }
+}

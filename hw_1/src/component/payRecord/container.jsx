@@ -7,12 +7,8 @@ class PayRecord extends React.Component {
         this.props = props;
     }
 
-    toEdit(id) {
-
-    }
-
     render() {
-        const propsParams = {...this.props, toEdit: this.toEdit}
+        const propsParams = {...this.props}
         return <View {...propsParams}/>;
     }
 }
