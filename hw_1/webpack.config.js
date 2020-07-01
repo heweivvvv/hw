@@ -5,8 +5,19 @@ module.exports = {
     entry: './src/main.js',
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        globalObject: "this"
     },
+    mode: 'development',
+
+    devServer: {
+        proxy: {},
+        hot: true,
+        host: '10.80.10.69',
+        hotOnly: true,
+        port: 3000
+    },
+    devtool: '#eval-source-map',
     module: {
         rules: [
             {
@@ -22,13 +33,6 @@ module.exports = {
                     loader: "html-loader"
                 }
             },
-           /* {
-                exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
-                loader: require.resolve('file-loader'),
-                options: {
-                    name: 'static/media/[name].[hash:8].[ext]',
-                },
-            },*/
             {
                 test: /\.scss$/,
                 use: [

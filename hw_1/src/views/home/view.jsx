@@ -6,9 +6,15 @@ let Component = ({records, goDetail}) => {
 
     return (
         <div className={styles.view}>
-            {
-                records.map(r => (<PayRecord key={r.id} {...r} goDetail={goDetail}/>))
-            }
+
+            <div className={styles.btns}>
+                <button>新增</button>
+            </div>
+            <div className={styles.content}>
+                {
+                    records.map(r => (<PayRecord key={r.id} {...r} goDetail={goDetail}/>))
+                }
+            </div>
         </div>
     )
 }

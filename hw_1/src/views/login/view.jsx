@@ -20,19 +20,22 @@ let Component = ({
                 <svg className={styles.titleSVG} width="100%" height="100%">
                     <text textAnchor="middle" x="50%" y="50%" dominantBaseline="middle" fill="black"
                           style={{fontSize: 70, fontFamily: 'Microsoft Yahei', fontWeight: 600}}>
-                        welcome to xxxx
+                        {/*{appConfig.loginTitle}*/}
+                        ssss
                     </text>
                 </svg>
             </div>
             <div className={styles.login}>
                 <div className={styles.labelInput}>
                     <div className={styles.labelDom}>用户名</div>
-                    <input value={userName} onChange={(e) => changeUserName(e)} className={styles.inputDom}
+                    <input value={userName} onChange={(e) => changeUserName(e)}
+                           className={styles.inputDom}
                            type="text"/>
                 </div>
                 <div className={styles.labelInput}>
                     <div className={styles.labelDom}>密码</div>
-                    <input value={password} onChange={(e) => changePw(e)} className={styles.inputDom} type="password"/>
+                    <input value={password} onChange={(e) => changePw(e)}
+                           className={styles.inputDom} type="password"/>
                 </div>
                 <div className={styles.labelInput}>
                     <div className={styles.labelDom}>验证码</div>

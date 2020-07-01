@@ -2,9 +2,8 @@
     width: 40%;
     height: 100%;
     display: flex;
-    margin: auto;
+    margin: 20px auto;
     flex-direction: column;
-    margin-top: 20px;
 
     .content {
         display: flex;
@@ -32,8 +31,6 @@
                 border: 1px solid royalblue;
                 border-radius: 3px;
             }
-
-
         }
     }
 

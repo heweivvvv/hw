@@ -1,8 +1,12 @@
+@import "../../styles/common";
+
 .view {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    background: url("/src/images/bg.jpg") no-repeat;
+    background-size:100% 100%;
 
     .title {
         height: 40%;
@@ -34,6 +38,9 @@
             .inputDom {
                 width: 50%;
                 border-radius: 5px;
+                background: border-box;
+                outline: none;
+                border: 2px solid rgba(111,111,111,0.6);
             }
 
             .checkCode {
@@ -50,9 +57,11 @@
             margin-top: 20px;
             justify-content: center;
 
-            button{
-                height: 32px;
+            button {
+                @include button();
                 padding: 0 30px;
+                background-color: rgb(23,227,224);
+                border-radius: 5px;
             }
         }
     }

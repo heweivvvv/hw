@@ -7,13 +7,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectId" id="1dAk95bxfdx9YGG22ToC7NWRxgF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,19 +29,35 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/logined" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="ts.external.directory.path" value="E:\app\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\app\Git\Repository\hw_1\src\images" />
+      <recent name="F:\demo\hw_1\src\component\table\thead" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\app\Git\Repository\hw_1\src\images" />
       <recent name="F:\demo\hw_1\src\views\logined" />
       <recent name="F:\demo\hw_1\src\views\login" />
       <recent name="F:\demo\hw_1" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\demo\hw_1\src\component\table\thead" />
-    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -52,6 +75,14 @@
       <workItem from="1592441171322" duration="599000" />
       <workItem from="1592527061853" duration="1210000" />
       <workItem from="1592615854155" duration="38795000" />
+      <workItem from="1592873707896" duration="3273000" />
+      <workItem from="1592979918501" duration="2904000" />
+      <workItem from="1593092456124" duration="13651000" />
+      <workItem from="1593304506904" duration="1249000" />
+      <workItem from="1593408348537" duration="2473000" />
+      <workItem from="1593484720993" duration="6343000" />
+      <workItem from="1593569589015" duration="8315000" />
+      <workItem from="1593588127772" duration="5350000" />
     </task>
     <servers />
   </component>
@@ -59,24 +90,45 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1749" y="155" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592620259268">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="337" y="2" key="#Notifications" timestamp="1592874071498">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="337" y="2" key="#Notifications/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592874071498" />
+    <state x="272" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592979983615">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="272" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592979983615" />
     <state x="1749" y="155" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592620259268" />
-    <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592809860058">
+    <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593580664149">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592809860058" />
+    <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593580664149" />
     <state x="1969" y="246" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592639379797" />
-    <state x="455" y="237" key="FileChooserDialogImpl" timestamp="1592793606219">
+    <state x="470" y="237" key="FileChooserDialogImpl" timestamp="1593304554080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="455" y="237" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592793606219" />
+    <state x="470" y="237" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593304554080" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592296072669" />
-    <state x="184" y="5" key="SettingsEditor" timestamp="1592617224560">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1593597362854">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="5" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592617224560" />
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593597362854" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1593597362854">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593597362854" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1593597362854">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593597362854" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1593597362854">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593597362854" />
+    <state x="184" y="5" key="SettingsEditor" timestamp="1592875221227">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="5" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592875221227" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1592792929760">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -85,5 +137,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592794698917" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/views/detail/view.jsx</url>
+          <line>66</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

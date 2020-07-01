@@ -1,0 +1,50 @@
+@import './color.scss';
+
+@mixin transition($duration:.2s, $timingfn:ease-in-out) {
+    transition: all $duration $timingfn;
+    -moz-transition: all $duration $timingfn;
+    -webkit-transition: all $duration $timingfn;
+    -o-transition: all $duration $timingfn;
+    -ms-transition: all $duration $timingfn;
+}
+
+@mixin button($width:auto,$height:32px,$fontSize:15px) {
+    width: $width;
+    height: $height;
+    line-height: $height;
+    color: #fff;
+    font-size: $fontSize;
+    text-align: center;
+    display: inline-block;
+    background-color: $btnBgColor2;
+    border: none;
+    padding: 0 14px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    text-shadow: 0 0 1px #121212;
+    cursor: pointer;
+    box-shadow: 0 1px #14545D;
+    outline: none;
+    @include transition();
+
+    &:hover {
+        background-color: $btnBgColorHover;
+    }
+
+    &:active {
+        background-color: $btnBgColorHover;
+        box-shadow: 0 0 6px $btnBgColorHover;
+    }
+
+    &.disabled, &[disabled] {
+        cursor: not-allowed;
+        opacity: .5;
+
+        &:hover, &:active {
+            box-shadow: none;
+            background-color: $btnBgColor2;
+        }
+    }
+
+}

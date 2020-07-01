@@ -1,3 +1,5 @@
+@import "../../styles/common";
+
 .view {
     width: 100%;
     display: flex;
@@ -32,6 +34,11 @@
     }
 
     .edit {
+        margin: auto 0;
 
+        button{
+            @include button('50px', '26px');
+            border-radius: 3px;
+        }
     }
 }
