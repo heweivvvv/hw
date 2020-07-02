@@ -20,8 +20,7 @@ let Component = ({
                 <svg className={styles.titleSVG} width="100%" height="100%">
                     <text textAnchor="middle" x="50%" y="50%" dominantBaseline="middle" fill="black"
                           style={{fontSize: 70, fontFamily: 'Microsoft Yahei', fontWeight: 600}}>
-                        {/*{appConfig.loginTitle}*/}
-                        ssss
+                        {window.appConfig.loginTitle}
                     </text>
                 </svg>
             </div>

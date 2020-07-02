@@ -10,7 +10,14 @@ const component = ({
                        payDate,
                        payMenoy,
                        remark,
-                       id
+                       editing,
+                       id,
+                       // action
+                       toEdit,
+                       toSave,
+                       changePayDesc,
+                       typeIdChange,
+
                    }) => {
     return (
         <div className={styles.view}>
@@ -20,7 +27,10 @@ const component = ({
                         描述
                     </div>
                     <div className={styles.recodeInfoValue}>
-                        {payDesc}
+                        {
+                            editing ? <input onChange={e => changePayDesc(e)} value={payDesc}></input> :
+                                <span>{payDesc}</span>
+                        }
                     </div>
                 </div>
                 <div className={styles.recodeInfo}>
@@ -28,7 +38,17 @@ const component = ({
                         消费类型
                     </div>
                     <div className={styles.recodeInfoValue}>
-                        {consumeTypes[typeId]}
+                        {
+                            editing ? <select onChange={(e) => typeIdChange(e)} value={typeId}>
+                                    {
+                                        Object.keys(consumeTypes).map(typeKey => <option key={`typeOp_ ${typeKey}`}
+                                                                                         value={typeKey}>{consumeTypes[typeKey]}</option>)
+                                    }
+                                </select> :
+                                <span>
+                                     {consumeTypes[typeId]}
+                                </span>
+                        }
                     </div>
                 </div>
                 <div className={styles.recodeInfo}>
@@ -65,7 +85,8 @@ const component = ({
                 </div>
             </div>
             <div className={styles.btns}>
-                <button>保存</button>
+                <button onClick={(e) => toEdit()}>编辑</button>
+                <button onClick={(e) => toSave()}>保存</button>
                 <button>返回</button>
             </div>
         </div>

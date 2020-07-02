@@ -5,17 +5,7 @@ module.exports = {
     entry: './src/main.js',
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, 'dist'),
-        globalObject: "this"
-    },
-    mode: 'development',
-
-    devServer: {
-        proxy: {},
-        hot: true,
-        host: '10.80.10.69',
-        hotOnly: true,
-        port: 3000
+        path: path.resolve(__dirname, 'dist')
     },
     devtool: '#eval-source-map',
     module: {
@@ -61,7 +51,7 @@ module.exports = {
                     {
                         loader: 'css-loader'
                     }
-                ] //'style!css' // Run both loaders
+                ]
             }
         ]
     },
@@ -70,6 +60,20 @@ module.exports = {
             title: 'react app',
             filename: "index.html",
             template: "./src/index.html"
-        })
-    ]
+        }),
+    ],
+    optimization: {
+        runtimeChunk: {
+            name: 'manifest'
+        },
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'initial'
+                }
+            }
+        }
+    },
 }
