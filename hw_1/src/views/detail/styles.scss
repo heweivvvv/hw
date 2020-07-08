@@ -19,6 +19,7 @@
             margin: 5px auto;
             justify-content: space-between;
             line-height: 32px;
+            display: flex;
 
             .recodeInfoName {
                 width: 20%;
@@ -30,6 +31,25 @@
                 text-align: center;
                 border: 1px solid royalblue;
                 border-radius: 3px;
+                display: flex;
+                height: 32px;
+
+                input,select{
+                    border: none;
+                    line-height: 30px;
+                    outline-color: #17e3e0;
+                    flex: 1;
+                    text-align: center;
+
+                    option{
+                        outline-color: red;
+                        border-color: blueviolet;
+                    }
+                }
+
+                span{
+                    flex: 1;
+                }
             }
         }
     }
@@ -49,4 +69,12 @@
             color: #ffffff;
         }
     }
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: inherit !important;
 }

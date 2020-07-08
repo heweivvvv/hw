@@ -12,8 +12,8 @@ class Detail extends Component {
             payDesc: "在xxx吃饭",
             typeId: '1',
             payTypeId: '1',
-            payDate: '2020-06-12 11:11:11',
-            payMenoy: 23.22,
+            payDate: '2020-06-12',
+            payMoney: 23.22,
             remark: '',
             id: id,
             editing: false,
@@ -37,6 +37,10 @@ class Detail extends Component {
         this.setState({editing: false});
     }
 
+    goBack(e){
+        this.props.history.push('/home');
+    }
+
     changePayDesc(e) {
         this.setState({payDesc: e.target.value});
     }
@@ -45,14 +49,37 @@ class Detail extends Component {
         this.setState({typeId: e.target.value});
     }
 
+    payTypeChange(e){
+        this.setState({payTypeId: e.target.value});
+    }
+
+    payDateChange(e){
+        console.log(e)
+        this.setState({payDate: e.target.value});
+    }
+
+    payMoneyChange(e){
+        this.setState({payMoney: e.target.value});
+    }
+
+    remarkChange(e){
+        this.setState({remark: e.target.value});
+    }
+
     render() {
         const propsPrams = {
             ...this.props,
             ...this.state,
             toSave: () => this.toSave(),
             toEdit: () => this.toEdit(),
+            goBack: () => this.goBack(),
             changePayDesc: (e) => this.changePayDesc(e),
-            typeIdChange: (e) => this.typeIdChange(e)
+            typeIdChange: (e) => this.typeIdChange(e),
+            payTypeChange: (e) => this.payTypeChange(e),
+            payDateChange: (e) => this.payDateChange(e),
+            payMoneyChange: (e) => this.payMoneyChange(e),
+            remarkChange: (e) => this.remarkChange(e),
+
         };
         return <View {...propsPrams}/>
     }

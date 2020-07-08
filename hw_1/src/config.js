@@ -1,4 +1,4 @@
-
+window.baseUrl = ''
 
 window.appConfig = {};
 

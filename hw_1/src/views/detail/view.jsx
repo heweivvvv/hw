@@ -8,16 +8,20 @@ const component = ({
                        payTypeId,
                        payTypes,
                        payDate,
-                       payMenoy,
+                       payMoney,
                        remark,
                        editing,
                        id,
                        // action
                        toEdit,
                        toSave,
+                       goBack,
                        changePayDesc,
                        typeIdChange,
-
+                       payTypeChange,
+                       payDateChange,
+                       payMoneyChange,
+                       remarkChange,
                    }) => {
     return (
         <div className={styles.view}>
@@ -56,7 +60,16 @@ const component = ({
                         支付类型
                     </div>
                     <div className={styles.recodeInfoValue}>
-                        {payTypes[payTypeId]}
+                        {
+                            editing ? <select onChange={e => payTypeChange(e)} value={payTypeId}>
+                                    {
+                                        Object.keys(payTypes).map(i => <option key={`type_${i}`}
+                                                                               value={i}>{payTypes[i]}</option>)
+                                    }
+                                </select> :
+                                <span> {payTypes[payTypeId]}</span>
+                        }
+
                     </div>
                 </div>
                 <div className={styles.recodeInfo}>
@@ -64,7 +77,13 @@ const component = ({
                         时间
                     </div>
                     <div className={styles.recodeInfoValue}>
-                        {payDate}
+                        {
+                            editing ? <input onChange={e => payDateChange(e)} type='date' value={payDate}></input> :
+                                <span>
+                                {payDate}
+                            </span>
+                        }
+
                     </div>
                 </div>
                 <div className={styles.recodeInfo}>
@@ -72,7 +91,10 @@ const component = ({
                         金额
                     </div>
                     <div className={styles.recodeInfoValue}>
-                        {payMenoy}
+                        {
+                            editing ? <input type="number" onChange={e => payMoneyChange(e)} value={payMoney}></input> :
+                                <span> {payMoney}</span>
+                        }
                     </div>
                 </div>
                 <div className={styles.recodeInfo}>
@@ -80,14 +102,18 @@ const component = ({
                         备注
                     </div>
                     <div className={styles.recodeInfoValue}>
-                        {remark}
+                        {
+                            editing ? <input type="text" onChange={e => remarkChange(e)} value={remark}></input> :
+                            <span> {remark}</span>
+                        }
+
                     </div>
                 </div>
             </div>
             <div className={styles.btns}>
-                <button onClick={(e) => toEdit()}>编辑</button>
-                <button onClick={(e) => toSave()}>保存</button>
-                <button>返回</button>
+                <button className={editing ? styles.hide : styles.show} onClick={(e) => toEdit()}>编辑</button>
+                <button className={editing ? styles.show : styles.hide} onClick={(e) => toSave()}>保存</button>
+                <button onClick={e => goBack(e)}>返回</button>
             </div>
         </div>
     )
