@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="388c7b1d-833d-46d7-b08e-2c6be9fd5dd3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/service/helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/init.mongo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.server.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/detail/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/container.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/detail/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/detail/view.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/view.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/home/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home/container.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +26,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectId" id="1dAk95bxfdx9YGG22ToC7NWRxgF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -38,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pro-mern-stack-master" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -98,7 +97,8 @@
       <workItem from="1594082605409" duration="2387000" />
       <workItem from="1594101549329" duration="663000" />
       <workItem from="1594102659645" duration="83000" />
-      <workItem from="1594170400919" duration="9377000" />
+      <workItem from="1594170400919" duration="14569000" />
+      <workItem from="1594255224822" duration="8354000" />
     </task>
     <servers />
   </component>
@@ -120,46 +120,47 @@
     </state>
     <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593580664149" />
     <state x="1969" y="246" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592639379797" />
-    <state x="455" y="277" key="FileChooserDialogImpl" timestamp="1594102694454">
+    <state x="455" y="277" key="FileChooserDialogImpl" timestamp="1594256861433">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="470" y="237" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593304554080" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593660780396" />
-    <state x="455" y="277" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594102694454" />
+    <state x="455" y="277" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594256861433" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594012155397" />
-    <state width="1345" height="330" key="GridCell.Tab.0.bottom" timestamp="1594174176199">
+    <state width="1345" height="330" key="GridCell.Tab.0.bottom" timestamp="1594201298755">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="330" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594174176199" />
+    <state width="1345" height="330" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594201298755" />
     <state width="995" height="305" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594028495665" />
-    <state width="1345" height="330" key="GridCell.Tab.0.center" timestamp="1594174176199">
+    <state width="1345" height="330" key="GridCell.Tab.0.center" timestamp="1594201298755">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="330" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594174176199" />
+    <state width="1345" height="330" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594201298755" />
     <state width="995" height="305" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594028495665" />
-    <state width="1345" height="330" key="GridCell.Tab.0.left" timestamp="1594174176198">
+    <state width="1345" height="330" key="GridCell.Tab.0.left" timestamp="1594201298755">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="330" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594174176198" />
+    <state width="1345" height="330" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594201298755" />
     <state width="995" height="305" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594028495665" />
-    <state width="1345" height="330" key="GridCell.Tab.0.right" timestamp="1594174176199">
+    <state width="1345" height="330" key="GridCell.Tab.0.right" timestamp="1594201298755">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="330" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594174176199" />
+    <state width="1345" height="330" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594201298755" />
     <state width="995" height="305" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594028495665" />
     <state x="1625" y="7" key="SettingsEditor" timestamp="1593660791172">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="184" y="5" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592875221227" />
     <state x="1625" y="7" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593660791172" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1592792929760">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="339" y="171" key="run.anything.popup" timestamp="1594256711580">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592792929760" />
+    <state x="339" y="171" key="run.anything.popup/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594256711580" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592794698917">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
