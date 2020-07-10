@@ -1,4 +1,4 @@
-export default async (url = '', data = {}, type = 'GET', method = 'fetch') => {
+export default async function (url = '', data = {}, type = 'GET', method = 'fetch') {
     type = type.toUpperCase();
     url = baseUrl + url;
 

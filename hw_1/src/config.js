@@ -1,4 +1,4 @@
-window.baseUrl = ''
+window.baseUrl = 'http://localhost:3000'
 
 window.appConfig = {};
 

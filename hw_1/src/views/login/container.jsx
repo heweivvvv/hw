@@ -1,6 +1,8 @@
 import React from 'react'
 import View from './view.jsx';
 import {withRouter} from 'react-router';
+import service from '../../service/helper'
+import Cookies from 'js-cookie'
 
 class Login extends React.Component {
     constructor(props) {
@@ -15,16 +17,19 @@ class Login extends React.Component {
         }
     }
 
-    goLogin() {
-
-        // todo 接口功能没实现，默认直接成功
-        this.setState({
-            userName: '',
-            checkCode: '',
-            password: ''
-        });
-        sessionStorage.setItem("isLogin", "1");
-        this.props.history.push('/home');
+    async goLogin() {
+        const params = {
+            loginName: this.state.userName,
+            password: this.state.password
+        };
+        let {user, msg, result} = await service('/signin', params, 'POST');
+        if (result) {
+            this.props.history.push('/home');
+            sessionStorage.setItem("isLogin", "1");
+            Cookies.set('userId', user.userId);
+        }else{
+            alert(msg);
+        }
     }
 
     changeUserName(e) {
