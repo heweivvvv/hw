@@ -11,7 +11,8 @@ let Component = ({
                      goLogin,
                      changeUserName,
                      changePw,
-                     changeCd
+                     changeCd,
+                     updateCd
                  }) => {
 
     return (
@@ -39,7 +40,7 @@ let Component = ({
                 <div className={styles.labelInput}>
                     <div className={styles.labelDom}>验证码</div>
                     <input value={checkCode} onChange={e => changeCd(e)} className={styles.inputDom} type="text"/>
-                    <div className={styles.checkCode}>{checkCodeText}</div>
+                    <div onClick={e => updateCd()} className={styles.checkCode}>{checkCodeText}</div>
                 </div>
                 <div className={styles.bnts}>
                     <button onClick={(e) => goLogin(e)}>登录</button>

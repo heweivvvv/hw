@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     background: url("/src/images/bg.jpg") no-repeat;
-    background-size:100% 100%;
+    background-size: 100% 100%;
 
     .title {
         height: 40%;
@@ -30,7 +30,7 @@
             flex-direction: row;
             line-height: 32px;
             margin-top: 10px;
-            color: rgba(13,217,226,1);
+            color: rgba(13, 217, 226, 1);
 
             .labelDom {
                 width: 20%;
@@ -41,7 +41,7 @@
                 border-radius: 5px;
                 background: border-box;
                 outline: none;
-                border: 1px solid rgba(13,217,226,0.6);
+                border: 1px solid rgba(13, 217, 226, 0.6);
                 color: #ffffff;
             }
 
@@ -50,6 +50,10 @@
                 font-size: 18px;
                 letter-spacing: 6px;
                 margin: auto;
+                cursor: pointer;
+                background-color: rgba(30, 30, 187, 0.5);
+                text-align: center;
+                border-radius: 3px;
             }
         }
 
@@ -62,7 +66,7 @@
             button {
                 @include button();
                 padding: 0 30px;
-                background-color: rgb(23,227,224);
+                background-color: rgb(23, 227, 224);
                 border-radius: 5px;
             }
         }

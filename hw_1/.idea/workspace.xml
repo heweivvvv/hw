@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="388c7b1d-833d-46d7-b08e-2c6be9fd5dd3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/0.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/2.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/init.mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/init.mongo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/helper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/login/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/container.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.server.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.server.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login/view.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/view.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +139,7 @@
       <workItem from="1594102659645" duration="83000" />
       <workItem from="1594170400919" duration="14569000" />
       <workItem from="1594255224822" duration="8354000" />
-      <workItem from="1594344163218" duration="17603000" />
+      <workItem from="1594344163218" duration="19622000" />
     </task>
     <servers />
   </component>
