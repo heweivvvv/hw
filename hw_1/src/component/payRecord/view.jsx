@@ -3,10 +3,10 @@ import styles from './styles.scss'
 
 const component = ({
                        id,
-                       payMenoy,
-                       payDate,
-                       type,
-                       payDesc,
+                       count,
+                       consumeData,
+                       consumeTypeText,
+                       title,
                        goDetail
 
                    }) => {
@@ -14,17 +14,17 @@ const component = ({
         <div className={styles.view}>
             <div className={styles.payInfo}>
                 <div className={styles.payDesc}>
-                    {payDesc}
+                    {title}
                 </div>
                 <div className={styles.payType}>
-                    {type}
+                    {consumeTypeText}
                 </div>
                 <div className={styles.payDate}>
-                    {payDate}
+                    {consumeData}
                 </div>
             </div>
             <div className={styles.payMenoy}>
-                ￥{payMenoy}
+                ￥{count}
             </div>
             <div className={styles.edit}>
                 <button onClick={() => goDetail(id)}>详情</button>

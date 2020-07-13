@@ -34,20 +34,20 @@
                 display: flex;
                 height: 32px;
 
-                input,select{
+                input, select {
                     border: none;
                     line-height: 30px;
                     outline-color: #17e3e0;
                     flex: 1;
                     text-align: center;
 
-                    option{
+                    option {
                         outline-color: red;
                         border-color: blueviolet;
                     }
                 }
 
-                span{
+                span {
                     flex: 1;
                 }
             }
@@ -59,7 +59,7 @@
         justify-content: center;
         margin-top: 20px;
 
-        button{
+        button {
             width: 84px;
             height: 40px;
             border-radius: 5px;
@@ -76,5 +76,5 @@
 }
 
 .show {
-    display: inherit !important;
+    display: flex !important;
 }

@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './styles.scss';
 
 const component = ({
-                       payDesc,
-                       typeId,
+                       title,
+                       consumeTypeId,
                        consumeTypes,
                        payTypeId,
                        payTypes,
-                       payDate,
-                       payMoney,
+                       consumeData,
+                       count,
                        remark,
                        editing,
                        id,
@@ -17,10 +17,10 @@ const component = ({
                        toSave,
                        goBack,
                        changePayDesc,
-                       typeIdChange,
+                       consumeTypeIdChange,
                        payTypeChange,
-                       payDateChange,
-                       payMoneyChange,
+                       consumeDataChange,
+                       countChange,
                        remarkChange,
                    }) => {
     return (
@@ -33,7 +33,7 @@ const component = ({
                     <div className={styles.recodeInfoValue}>
                         {
                             editing ? <input onChange={e => changePayDesc(e)} value={payDesc}></input> :
-                                <span>{payDesc}</span>
+                                <span>{title}</span>
                         }
                     </div>
                 </div>
@@ -43,14 +43,14 @@ const component = ({
                     </div>
                     <div className={styles.recodeInfoValue}>
                         {
-                            editing ? <select onChange={(e) => typeIdChange(e)} value={typeId}>
+                            editing ? <select onChange={(e) => consumeTypeIdChange(e)} value={consumeTypeId}>
                                     {
                                         Object.keys(consumeTypes).map(typeKey => <option key={`typeOp_ ${typeKey}`}
                                                                                          value={typeKey}>{consumeTypes[typeKey]}</option>)
                                     }
                                 </select> :
                                 <span>
-                                     {consumeTypes[typeId]}
+                                     {consumeTypes[consumeTypeId]}
                                 </span>
                         }
                     </div>
@@ -78,9 +78,10 @@ const component = ({
                     </div>
                     <div className={styles.recodeInfoValue}>
                         {
-                            editing ? <input onChange={e => payDateChange(e)} type='date' value={payDate}></input> :
+                            editing ?
+                                <input onChange={e => consumeDataChange(e)} type='date' value={consumeData}></input> :
                                 <span>
-                                {payDate}
+                                {consumeData}
                             </span>
                         }
 
@@ -92,8 +93,8 @@ const component = ({
                     </div>
                     <div className={styles.recodeInfoValue}>
                         {
-                            editing ? <input type="number" onChange={e => payMoneyChange(e)} value={payMoney}></input> :
-                                <span> {payMoney}</span>
+                            editing ? <input type="number" onChange={e => countChange(e)} value={count}></input> :
+                                <span> {count}</span>
                         }
                     </div>
                 </div>
@@ -104,7 +105,7 @@ const component = ({
                     <div className={styles.recodeInfoValue}>
                         {
                             editing ? <input type="text" onChange={e => remarkChange(e)} value={remark}></input> :
-                            <span> {remark}</span>
+                                <span> {remark}</span>
                         }
 
                     </div>

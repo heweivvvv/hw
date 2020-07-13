@@ -1,30 +1,42 @@
 import React, {Component} from 'react';
 import View from './view.jsx';
 import {withRouter} from 'react-router';
+import {addRecord, getConsumeTypeList, getPayTypeList} from "../../service/home";
 
 class Detail extends Component {
     constructor(props) {
         super(props);
         this.props = props;
         const id = this.props.match.params.id;
+        this.init(id);
         //console.log(this.props.match.params.id)
-        this.state = {
-            payDesc: "在xxx吃饭",
-            typeId: '1',
-            payTypeId: '1',
-            payDate: '2020-06-12',
-            payMoney: 23.22,
-            remark: '',
-            id: id,
-            editing: false,
-            consumeTypes: {
-                "1": "微信",
-                "2": "支付宝",
-            },
-            payTypes: {
-                "1": "餐饮",
-                "2": "购物",
+    }
+
+    async init(id) {
+        try {
+            const consumeTypes = await getConsumeTypeList();
+            const payTypes = await getPayTypeList();
+            if (consumeTypes[0] && payTypes[0]) {
+                if (id) {
+                    // 查看,获取id所属记录
+                } else {
+                    //新增
+                    this.state = {
+                        title: "",
+                        consumeTypeId: consumeTypes[0].id,
+                        payTypeId: payTypes.list[0].id,
+                        consumeData: '',
+                        count: null,
+                        remark: '',
+                        id: '',
+                        editing: true,
+                        consumeTypes,
+                        payTypes
+                    }
+                }
             }
+        } catch (e) {
+
         }
     }
 
@@ -32,37 +44,62 @@ class Detail extends Component {
         this.setState({editing: true});
     }
 
-    toSave() {
+    async toSave() {
         // 成功
-        this.setState({editing: false});
+        try {
+            if (!this.state.id) {
+                const record = {
+                    title: this.state.title,
+                    consumeTypeId: this.state.consumeTypeId,
+                    payTypeId: this.state.payTypeId,
+                    consumeData: this.state.consumeData,
+                    count: this.state.count,
+                    remark: this.state.remark
+                };
+
+                const res = await addRecord(record);
+                if (res.result) {
+                    this.props.history.push('/home');
+                } else {
+                    alert(res.msg);
+                }
+            }
+        } catch (e) {
+
+        }
     }
 
-    goBack(e){
+    // todo 检查输入信息，待实现 显示界面可以在输入错误时显示错误
+    checkRecord(record) {
+        const checks = [title, consumeData, count]
+    }
+
+    goBack(e) {
         this.props.history.push('/home');
     }
 
     changePayDesc(e) {
-        this.setState({payDesc: e.target.value});
+        this.setState({title: e.target.value});
     }
 
-    typeIdChange(e) {
-        this.setState({typeId: e.target.value});
+    consumeTypeIdChange(e) {
+        this.setState({consumeTypeId: e.target.value});
     }
 
-    payTypeChange(e){
+    payTypeChange(e) {
         this.setState({payTypeId: e.target.value});
     }
 
-    payDateChange(e){
+    consumeDataChange(e) {
         console.log(e)
-        this.setState({payDate: e.target.value});
+        this.setState({consumeData: e.target.value});
     }
 
-    payMoneyChange(e){
-        this.setState({payMoney: e.target.value});
+    countChange(e) {
+        this.setState({count: e.target.value});
     }
 
-    remarkChange(e){
+    remarkChange(e) {
         this.setState({remark: e.target.value});
     }
 
@@ -70,16 +107,15 @@ class Detail extends Component {
         const propsPrams = {
             ...this.props,
             ...this.state,
-            toSave: () => this.toSave(),
+            toSave: async () => this.toSave(),
             toEdit: () => this.toEdit(),
             goBack: () => this.goBack(),
             changePayDesc: (e) => this.changePayDesc(e),
-            typeIdChange: (e) => this.typeIdChange(e),
+            consumeTypeIdChange: (e) => this.consumeTypeIdChange(e),
             payTypeChange: (e) => this.payTypeChange(e),
-            payDateChange: (e) => this.payDateChange(e),
-            payMoneyChange: (e) => this.payMoneyChange(e),
-            remarkChange: (e) => this.remarkChange(e),
-
+            consumeDataChange: (e) => this.consumeDataChange(e),
+            countChange: (e) => this.countChange(e),
+            remarkChange: (e) => this.remarkChange(e)
         };
         return <View {...propsPrams}/>
     }

@@ -14,3 +14,4 @@ db.userInfo.insert([
 db.userInfo.createIndex({ loginName: 1 });
 db.userInfo.createIndex({ userName: 1 });
 db.userInfo.createIndex({ userId: 1 });
+

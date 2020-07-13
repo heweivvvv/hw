@@ -3,6 +3,7 @@ import session from 'express-session';
 import badyParser from 'body-parser';
 import serverStatic from 'serve-static';
 import cors from 'cors';
+import {validateRecord, cleanupRecord} from "./recordHelper";
 
 const app = new express();
 app.use(serverStatic('static'));
@@ -34,7 +35,8 @@ app.all('/api/*', (req, res, next) => {
     if (req.method === 'DELETE' || req.method === 'POST' || req.method === 'PUT') {
         if (!req.session || !req.session.user) {
             res.status(403).send({
-                message: 'You are not authorized to perform the operation',
+                result: false,
+                msg: 'You are not authorized to perform the operation',
             });
         } else {
             next();
@@ -44,8 +46,11 @@ app.all('/api/*', (req, res, next) => {
     }
 });
 
+/**
+ * @desc 登录请求接口
+ */
 app.post('/signin', (req, res) => {
-    console.log('handelSignin', res.headers);
+    // console.log('handelSignin', res.headers);
     if (!req.body.loginName || !req.body.password) {
         res.json({msg: '姓名或者密码错误!', result: false});
     } else {
@@ -53,12 +58,100 @@ app.post('/signin', (req, res) => {
         filter.loginName = req.body.loginName;
         filter.password = req.body.password;
         db.collection('userInfo').findOne(filter).then(user => {
-            console.log(user);
+            req.session.user = {
+                signedIn: true, name: user.loginName,
+            };
             res.json({user, result: true});
         }).catch(err => {
-            console.log(err);
+            //console.log(err);
             res.json({msg: '姓名或者密码错误!', result: false});
         })
+    }
+});
+
+/**
+ * @desc 退出登录接口
+ */
+app.post('/signout', (req, res) => {
+    if (req.session) req.session.destroy();
+    res.json({result: true});
+});
+
+/**
+ * @desc 获取支付类型
+ */
+app.get('/api/getPayTypeList', (req, res) => {
+    db.collection('payType').find().sort('order').then(types => {
+        res.json(types);
+    }).catch(err => {
+        res.json({msg: err, result: false});
+    })
+});
+
+/**
+ * 获取消费类型
+ */
+app.get('/api/getConsumeTypeList', (req, res) => {
+    db.collection('consumeType').find().sort('order').then(types => {
+        res.json(types);
+    }).catch(err => {
+        res.json({msg: err, result: false});
+    })
+});
+
+/**
+ * @desc 获取消费记录
+ */
+app.post('/api/getConsumeRecords', async (req, res) => {
+    try {
+        let consumeTypeMap = {};
+        let payTypeMap = {};
+        const records = await db.collection('consumeRecords').find();
+        (await getConsumeTypeList()).forEach(t => {
+            consumeTypeMap[t.typeId] = t.name;
+        });
+        (await getPayTypeList()).forEach(t => {
+            consumeTypeMap[t.typeId] = t.name;
+        });
+
+        records.forEach(r => {
+            r.consumeTypeText = consumeTypeMap[r.consumeTypeId];
+            r.payTypeText = payTypeMap[r.payTypeId];
+        });
+
+        res.json({records, result: true});
+    } catch (e) {
+        res.json({msg: e, result: false});
+    }
+});
+
+async function getConsumeTypeList() {
+    return db.collection('consumeType').find().sort('order');
+}
+
+async function getPayTypeList() {
+    return db.collection('payType').find().sort('order');
+}
+
+/**
+ * @desc 新增记录
+ */
+app.post('/api/addRecord', async (req, res) => {
+    try {
+        const record = cleanupRecord(req.body);
+        const error = validateRecord(record);
+        if (!error) {
+            const result = await db.collection.insertOne(record);
+            if (result && result.id) {
+                res.json({result: true});
+            } else {
+                res.json({result: false, msg: '新增失败'});
+            }
+        } else {
+            res.json({result: false, msg: error})
+        }
+    } catch (e) {
+        res.json({result: false, msg: e})
     }
 });
 

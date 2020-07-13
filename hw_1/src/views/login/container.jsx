@@ -35,7 +35,7 @@ class Login extends React.Component {
                 return;
             }
 
-            if (this.state.checkCodeText.toUpperCase() !== this.state.checkCode.toLowerCase()) {
+            if (this.state.checkCodeText.toUpperCase() !== this.state.checkCode.toUpperCase()) {
                 alert('验证码错误');
                 this.setState({
                     checkCodeText: buildCheckCode()
