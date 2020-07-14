@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.scss';
 import PayRecord from '../../component/payRecord/container.jsx';
 
-let Component = ({records, goDetail, addRecord}) => {
+let Component = ({records = [], goDetail, addRecord}) => {
 
     return (
         <div className={styles.view}>

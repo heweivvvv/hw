@@ -8,35 +8,36 @@ class Detail extends Component {
         super(props);
         this.props = props;
         const id = this.props.match.params.id;
-        this.init(id);
-        //console.log(this.props.match.params.id)
+        const popState = this.props.location.state || {};
+        this.state = {
+            title: popState.title || '',
+            consumeTypeId: popState.consumeTypeId || '',
+            payTypeId: popState.payTypeId || '',
+            consumeData: popState.consumeData || '',
+            count: popState.count || 0,
+            remark: popState.remark || '',
+            id: popState.id || '',
+            payTypes: [],
+            consumeTypes: [],
+            editing: id ? false : true
+        };
     }
 
-    async init(id) {
+    async componentDidMount() {
         try {
             const consumeTypes = await getConsumeTypeList();
             const payTypes = await getPayTypeList();
+            debugger
             if (consumeTypes[0] && payTypes[0]) {
-                if (id) {
-                    // 查看,获取id所属记录
-                } else {
-                    //新增
-                    this.state = {
-                        title: "",
-                        consumeTypeId: consumeTypes[0].id,
-                        payTypeId: payTypes.list[0].id,
-                        consumeData: '',
-                        count: null,
-                        remark: '',
-                        id: '',
-                        editing: true,
-                        consumeTypes,
-                        payTypes
-                    }
-                }
+                this.setState({
+                    consumeTypes,
+                    payTypes,
+                    consumeTypeId: consumeTypes[0].id,
+                    payTypeId: payTypes[0].id
+                });
             }
         } catch (e) {
-
+            console.log(e);
         }
     }
 
@@ -65,7 +66,7 @@ class Detail extends Component {
                 }
             }
         } catch (e) {
-
+            console.log(e);
         }
     }
 

@@ -20,6 +20,7 @@ export class App extends React.Component {
                         {/*登录权限控制组件*/}
                         <AuthRouter path='/home' component={Home}/>
                         <AuthRouter path='/detail:id' component={Detail}/>
+                        <AuthRouter path='/detail' component={Detail}/>
                     </Switch>
                 </BrowserRouter>
             </div>

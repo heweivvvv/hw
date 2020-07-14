@@ -8,25 +8,22 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.props = props;
-        this.init();
-    }
-
-    async init() {
-        const res = await getConsumeTypeList();
-        if (res.result) {
-            this.state = {
-                records: res.records
-            }
-        } else {
-            alert(res.msg);
-        }
+        this.state = {
+            records: []
+        };
     }
 
     async addRecord() {
         this.props.history.push('/detail');
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+        const res = await getConsumeRecords();
+        if (res.result) {
+            this.setState({records: res.records});
+        } else {
+            alert(res.msg);
+        }
     }
 
     goDetail(id) {

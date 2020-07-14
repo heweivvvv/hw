@@ -45,8 +45,8 @@ class Login extends React.Component {
 
             let {user, msg, result} = await service('/signin', params, 'POST');
             if (result) {
-                this.props.history.push('/home');
                 sessionStorage.setItem("isLogin", "1");
+                this.props.history.push('/home');
                 Cookies.set('userId', user.userId);
             } else {
                 alert(msg);

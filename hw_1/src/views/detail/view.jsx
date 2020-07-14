@@ -11,7 +11,6 @@ const component = ({
                        count,
                        remark,
                        editing,
-                       id,
                        // action
                        toEdit,
                        toSave,
@@ -23,6 +22,10 @@ const component = ({
                        countChange,
                        remarkChange,
                    }) => {
+
+    const consumeType = consumeTypeId && consumeTypes.length > 0 ? consumeTypes.find(c => c.typeId === consumeTypeId) : {};
+    const payType = payTypeId && payTypes.length > 0 ? payTypes.find(c => c.typeId === payTypeId) : {};
+
     return (
         <div className={styles.view}>
             <div className={styles.content}>
@@ -32,7 +35,7 @@ const component = ({
                     </div>
                     <div className={styles.recodeInfoValue}>
                         {
-                            editing ? <input onChange={e => changePayDesc(e)} value={payDesc}></input> :
+                            editing ? <input onChange={e => changePayDesc(e)} value={title}></input> :
                                 <span>{title}</span>
                         }
                     </div>
@@ -45,12 +48,12 @@ const component = ({
                         {
                             editing ? <select onChange={(e) => consumeTypeIdChange(e)} value={consumeTypeId}>
                                     {
-                                        Object.keys(consumeTypes).map(typeKey => <option key={`typeOp_ ${typeKey}`}
-                                                                                         value={typeKey}>{consumeTypes[typeKey]}</option>)
+                                        consumeTypes.map((c, index) => <option key={`consumeType_${index}`}
+                                                                               value={c.typeId}>{c.name}</option>)
                                     }
                                 </select> :
                                 <span>
-                                     {consumeTypes[consumeTypeId]}
+                                     {consumeType.name || ''}
                                 </span>
                         }
                     </div>
@@ -63,11 +66,11 @@ const component = ({
                         {
                             editing ? <select onChange={e => payTypeChange(e)} value={payTypeId}>
                                     {
-                                        Object.keys(payTypes).map(i => <option key={`type_${i}`}
-                                                                               value={i}>{payTypes[i]}</option>)
+                                        payTypes.map((c, index) => <option key={`payTypes_${index}`}
+                                                                               value={c.typeId}>{c.name}</option>)
                                     }
                                 </select> :
-                                <span> {payTypes[payTypeId]}</span>
+                                <span> {payType.name || ''}</span>
                         }
 
                     </div>

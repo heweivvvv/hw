@@ -80,23 +80,39 @@ app.post('/signout', (req, res) => {
 /**
  * @desc 获取支付类型
  */
-app.get('/api/getPayTypeList', (req, res) => {
-    db.collection('payType').find().sort('order').then(types => {
-        res.json(types);
-    }).catch(err => {
-        res.json({msg: err, result: false});
-    })
+app.get('/api/getPayTypeList', async (req, res) => {
+    try {
+        console.log('getPayTypeList')
+        const types = await getPayTypeList();
+        console.log(types);
+        if (types) {
+            res.json(types);
+        } else {
+            console.log('not find')
+            res.json([])
+        }
+    } catch (e) {
+        console.log('err:'+ e);
+        res.json([]);
+    }
 });
 
 /**
  * 获取消费类型
  */
-app.get('/api/getConsumeTypeList', (req, res) => {
-    db.collection('consumeType').find().sort('order').then(types => {
-        res.json(types);
-    }).catch(err => {
-        res.json({msg: err, result: false});
-    })
+app.get('/api/getConsumeTypeList', async (req, res) => {
+    try {
+        console.log('getPayTypeList')
+        const types = await getConsumeTypeList();
+        console.log(types);
+        if (types) {
+            res.json(types);
+        } else {
+            res.json([])
+        }
+    } catch (e) {
+        res.json([]);
+    }
 });
 
 /**
@@ -106,19 +122,19 @@ app.post('/api/getConsumeRecords', async (req, res) => {
     try {
         let consumeTypeMap = {};
         let payTypeMap = {};
-        const records = await db.collection('consumeRecords').find();
-        (await getConsumeTypeList()).forEach(t => {
+        const records = await db.collection('consumeRecords').find().toArray();
+        const consumeTypeList = await getConsumeTypeList();
+        consumeTypeList.forEach(t => {
             consumeTypeMap[t.typeId] = t.name;
         });
-        (await getPayTypeList()).forEach(t => {
-            consumeTypeMap[t.typeId] = t.name;
+        const payTypeList = await getPayTypeList();
+        payTypeList.forEach(t => {
+            payTypeMap[t.typeId] = t.name;
         });
-
         records.forEach(r => {
             r.consumeTypeText = consumeTypeMap[r.consumeTypeId];
             r.payTypeText = payTypeMap[r.payTypeId];
         });
-
         res.json({records, result: true});
     } catch (e) {
         res.json({msg: e, result: false});
@@ -126,11 +142,11 @@ app.post('/api/getConsumeRecords', async (req, res) => {
 });
 
 async function getConsumeTypeList() {
-    return db.collection('consumeType').find().sort('order');
+    return db.collection('consumeType').find().sort({order: 1}).toArray();
 }
 
 async function getPayTypeList() {
-    return db.collection('payType').find().sort('order');
+    return db.collection('payType').find().sort({order: 1}).toArray();
 }
 
 /**
