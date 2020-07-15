@@ -7,6 +7,8 @@ const component = ({
                        consumeData,
                        consumeTypeText,
                        title,
+
+                       deleteRecord,
                        goDetail
 
                    }) => {
@@ -28,6 +30,7 @@ const component = ({
             </div>
             <div className={styles.edit}>
                 <button onClick={() => goDetail(id)}>详情</button>
+                <button onClick={e => deleteRecord(id)}>删除</button>
             </div>
         </div>
     )

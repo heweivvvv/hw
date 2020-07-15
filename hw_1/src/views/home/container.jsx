@@ -30,15 +30,22 @@ class Home extends React.Component {
         this.props.history.push('/detail:' + id);
     }
 
+    async deleteRecord(id){
+
+    }
+
     render() {
         const propsParams = {
             ...this.props,
             ...this.state,
             goDetail: (id) => this.goDetail(id),
-            addRecord: async (id) => this.addRecord(id)
+            addRecord: async () => this.addRecord(),
+            deleteRecord: async (id) => this.deleteRecord(id)
         };
         return (<View {...propsParams}/>);
     }
+
+
 }
 
 export default withRouter(Home);

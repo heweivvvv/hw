@@ -2,21 +2,22 @@ import React, {Component} from 'react';
 import View from './view.jsx';
 import {withRouter} from 'react-router';
 import {addRecord, getConsumeTypeList, getPayTypeList} from "../../service/home";
+import {getOneRecord} from "../../service/detial";
 
 class Detail extends Component {
     constructor(props) {
         super(props);
         this.props = props;
         const id = this.props.match.params.id;
-        const popState = this.props.location.state || {};
+        // const popState = this.props.location.state || {};
         this.state = {
-            title: popState.title || '',
-            consumeTypeId: popState.consumeTypeId || '',
-            payTypeId: popState.payTypeId || '',
-            consumeData: popState.consumeData || '',
-            count: popState.count || 0,
-            remark: popState.remark || '',
-            id: popState.id || '',
+            title: '',
+            consumeTypeId: '',
+            payTypeId: '',
+            consumeData: '',
+            count: 0,
+            remark: '',
+            id: id || '',
             payTypes: [],
             consumeTypes: [],
             editing: id ? false : true
@@ -27,14 +28,22 @@ class Detail extends Component {
         try {
             const consumeTypes = await getConsumeTypeList();
             const payTypes = await getPayTypeList();
-            debugger
             if (consumeTypes[0] && payTypes[0]) {
                 this.setState({
                     consumeTypes,
                     payTypes,
-                    consumeTypeId: consumeTypes[0].id,
-                    payTypeId: payTypes[0].id
+                    consumeTypeId: consumeTypes[0].typeId,
+                    payTypeId: payTypes[0].typeId
                 });
+            }
+            if (this.state.id) {
+                const {record, result, msg} = await getOneRecord({id: this.state.id});
+                console.log(result, record);
+                if (result && record) {
+                    this.setState(record);
+                } else {
+                    alert(msg);
+                }
             }
         } catch (e) {
             console.log(e);
@@ -54,25 +63,37 @@ class Detail extends Component {
                     consumeTypeId: this.state.consumeTypeId,
                     payTypeId: this.state.payTypeId,
                     consumeData: this.state.consumeData,
-                    count: this.state.count,
+                    count: this.state.count.toFixed(2),
                     remark: this.state.remark
                 };
 
-                const res = await addRecord(record);
-                if (res.result) {
-                    this.props.history.push('/home');
+                if (this.checkRecord(record)) {
+                    const res = await addRecord(record);
+                    if (res.result) {
+                        this.props.history.push('/home');
+                    } else {
+                        alert(res.msg);
+                    }
                 } else {
-                    alert(res.msg);
+                    alert('输入不合法，请检查!')
                 }
+
             }
         } catch (e) {
             console.log(e);
         }
     }
 
-    // todo 检查输入信息，待实现 显示界面可以在输入错误时显示错误
+    // 检查输入信息，待实现 显示界面可以在输入错误时显示错误
     checkRecord(record) {
-        const checks = [title, consumeData, count]
+        let result = true;
+        const checks = ['title', 'consumeData', 'count'];
+        checks.forEach(k => {
+            if (!record[k]) {
+                result = false;
+            }
+        });
+        return result;
     }
 
     goBack(e) {

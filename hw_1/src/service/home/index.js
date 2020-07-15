@@ -16,6 +16,5 @@ export async function getPayTypeList(params = {}) {
 }
 
 export async function addRecord(params = {}) {
-    const res = await service('/api/addRecord', params);
-    return res;
+    return service('/api/addRecord', params, 'POST');
 }

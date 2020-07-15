@@ -33,7 +33,7 @@ const component = ({
                     <div className={styles.recodeInfoName}>
                         描述
                     </div>
-                    <div className={styles.recodeInfoValue}>
+                    <div className={`${styles.recodeInfoValue} ${!title ? styles.illegalInput: ''}`}>
                         {
                             editing ? <input onChange={e => changePayDesc(e)} value={title}></input> :
                                 <span>{title}</span>
@@ -79,7 +79,7 @@ const component = ({
                     <div className={styles.recodeInfoName}>
                         时间
                     </div>
-                    <div className={styles.recodeInfoValue}>
+                    <div className={`${styles.recodeInfoValue} ${!consumeData ? styles.illegalInput: ''}`}>
                         {
                             editing ?
                                 <input onChange={e => consumeDataChange(e)} type='date' value={consumeData}></input> :
@@ -94,7 +94,7 @@ const component = ({
                     <div className={styles.recodeInfoName}>
                         金额
                     </div>
-                    <div className={styles.recodeInfoValue}>
+                    <div className={`${styles.recodeInfoValue} ${!count ? styles.illegalInput: ''}`}>
                         {
                             editing ? <input type="number" onChange={e => countChange(e)} value={count}></input> :
                                 <span> {count}</span>

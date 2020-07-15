@@ -4,6 +4,7 @@ import badyParser from 'body-parser';
 import serverStatic from 'serve-static';
 import cors from 'cors';
 import {validateRecord, cleanupRecord} from "./recordHelper";
+import { ObjectId } from 'mongodb';
 
 const app = new express();
 app.use(serverStatic('static'));
@@ -82,17 +83,13 @@ app.post('/signout', (req, res) => {
  */
 app.get('/api/getPayTypeList', async (req, res) => {
     try {
-        console.log('getPayTypeList')
         const types = await getPayTypeList();
-        console.log(types);
         if (types) {
             res.json(types);
         } else {
-            console.log('not find')
             res.json([])
         }
     } catch (e) {
-        console.log('err:'+ e);
         res.json([]);
     }
 });
@@ -102,9 +99,7 @@ app.get('/api/getPayTypeList', async (req, res) => {
  */
 app.get('/api/getConsumeTypeList', async (req, res) => {
     try {
-        console.log('getPayTypeList')
         const types = await getConsumeTypeList();
-        console.log(types);
         if (types) {
             res.json(types);
         } else {
@@ -116,7 +111,7 @@ app.get('/api/getConsumeTypeList', async (req, res) => {
 });
 
 /**
- * @desc 获取消费记录
+ * @desc 批量获取消费记录
  */
 app.post('/api/getConsumeRecords', async (req, res) => {
     try {
@@ -134,6 +129,7 @@ app.post('/api/getConsumeRecords', async (req, res) => {
         records.forEach(r => {
             r.consumeTypeText = consumeTypeMap[r.consumeTypeId];
             r.payTypeText = payTypeMap[r.payTypeId];
+            r.id = String(r._id);
         });
         res.json({records, result: true});
     } catch (e) {
@@ -155,31 +151,44 @@ async function getPayTypeList() {
 app.post('/api/addRecord', async (req, res) => {
     try {
         const record = cleanupRecord(req.body);
+        record.recordCreateTime = Date.parse(new Date);
         const error = validateRecord(record);
         if (!error) {
-            const result = await db.collection.insertOne(record);
-            if (result && result.id) {
+            const result = await db.collection('consumeRecords').insertOne(record);
+            if (result && result.insertedId) {
                 res.json({result: true});
             } else {
                 res.json({result: false, msg: '新增失败'});
             }
         } else {
-            res.json({result: false, msg: error})
+            res.json({result: false, msg: JSON.stringify(error)})
         }
     } catch (e) {
         res.json({result: false, msg: e})
     }
 });
 
+// 获取单调消费记录
+app.post('/api/getOneRecord', async (req, res) => {
+    try {
+        console.log(req.body.id, ObjectId)
+        const id = new ObjectId(req.body.id);
+        console.log(id);
+        const record = await db.collection('consumeRecords').findOne({_id: id});
+        console.log(record);
+        if (record) {
+            res.json({record, result: true});
+        } else {
+            res.json({result: false, msg: '未找到记录'});
+        }
+    } catch (e) {
+        console.log(5, JSON.stringify(e));
+        res.json({result: false, msg: JSON.stringify(e)});
+    }
+});
 
 function setDb(newDb) {
     db = newDb;
 }
 
 export {app, setDb};
-
-
-
-
-
-
