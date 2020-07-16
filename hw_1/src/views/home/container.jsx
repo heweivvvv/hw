@@ -27,7 +27,7 @@ class Home extends React.Component {
     }
 
     goDetail(id) {
-        this.props.history.push('/detail:' + id);
+        this.props.history.push('/detail/' + id);
     }
 
     async deleteRecord(id){

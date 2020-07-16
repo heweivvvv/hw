@@ -4,7 +4,7 @@ import badyParser from 'body-parser';
 import serverStatic from 'serve-static';
 import cors from 'cors';
 import {validateRecord, cleanupRecord} from "./recordHelper";
-import { ObjectId } from 'mongodb';
+import {ObjectId} from 'mongodb';
 
 const app = new express();
 app.use(serverStatic('static'));
@@ -12,7 +12,7 @@ app.use(badyParser.json());
 app.use(session({secret: 'h7e3f5s6', resave: false, saveUninitialized: true}));
 app.use(cors({
     origin: ['http://localhost:8080'],
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     alloweHeaders: ['Conten-Type', 'Authorization'],
     credentials: true, // 发送cookie
 }));
@@ -171,19 +171,50 @@ app.post('/api/addRecord', async (req, res) => {
 // 获取单调消费记录
 app.post('/api/getOneRecord', async (req, res) => {
     try {
-        console.log(req.body.id, ObjectId)
         const id = new ObjectId(req.body.id);
-        console.log(id);
         const record = await db.collection('consumeRecords').findOne({_id: id});
-        console.log(record);
         if (record) {
+            record.id = record._id.toString();
             res.json({record, result: true});
         } else {
             res.json({result: false, msg: '未找到记录'});
         }
     } catch (e) {
-        console.log(5, JSON.stringify(e));
         res.json({result: false, msg: JSON.stringify(e)});
+    }
+});
+
+app.put('/api/modifyRecord/:id', async (req, res) => {
+    let recordId;
+    try {
+        recordId = new ObjectId(req.params.id);
+    } catch (e) {
+        res.status(422).json({msg: `Invalid issue ID format: ${error}`, result: false});
+        return;
+    }
+
+    const record = cleanupRecord(req.body);
+    const err = validateRecord(record);
+
+    if (err) {
+        res.status(422).json({msg: `Invalid request: ${err}`, result: false});
+        return;
+    }
+
+    try {
+        console.log(1, recordId, record)
+        await db.collection('consumeRecords').update({_id: recordId}, record);
+        console.log(2)
+        const newRecord = await db.collection('consumeRecords').findOne({_id: recordId});
+        console.log(3, newRecord)
+        if (newRecord) {
+            newRecord.id = newRecord._id.toString();
+            res.json({record: newRecord, result: true});
+        } else {
+            res.json({msg: '修改失败', result: false});
+        }
+    } catch (e) {
+        res.json({msg: JSON.stringify(e), result: false});
     }
 });
 

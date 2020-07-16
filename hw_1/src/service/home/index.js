@@ -18,3 +18,7 @@ export async function getPayTypeList(params = {}) {
 export async function addRecord(params = {}) {
     return service('/api/addRecord', params, 'POST');
 }
+
+export async function modifyRecord(params = {}, id) {
+    return service('/api/modifyRecord/' + id, params, 'PUT');
+}

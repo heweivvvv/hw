@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import View from './view.jsx';
 import {withRouter} from 'react-router';
-import {addRecord, getConsumeTypeList, getPayTypeList} from "../../service/home";
+import {addRecord, getConsumeTypeList, getPayTypeList, modifyRecord} from "../../service/home";
 import {getOneRecord} from "../../service/detial";
 
 class Detail extends Component {
@@ -38,7 +38,6 @@ class Detail extends Component {
             }
             if (this.state.id) {
                 const {record, result, msg} = await getOneRecord({id: this.state.id});
-                console.log(result, record);
                 if (result && record) {
                     this.setState(record);
                 } else {
@@ -63,7 +62,7 @@ class Detail extends Component {
                     consumeTypeId: this.state.consumeTypeId,
                     payTypeId: this.state.payTypeId,
                     consumeData: this.state.consumeData,
-                    count: this.state.count.toFixed(2),
+                    count: parseInt(this.state.count, 10).toFixed(2),
                     remark: this.state.remark
                 };
 
@@ -78,6 +77,25 @@ class Detail extends Component {
                     alert('输入不合法，请检查!')
                 }
 
+            } else {
+                const record = {
+                    title: this.state.title,
+                    consumeTypeId: this.state.consumeTypeId,
+                    payTypeId: this.state.payTypeId,
+                    consumeData: this.state.consumeData,
+                    count: parseInt(this.state.count, 10).toFixed(2),
+                    remark: this.state.remark
+                };
+                if (this.checkRecord(record)) {
+                    const res = await modifyRecord(record, this.state.id);
+                    if (res.result) {
+                        this.props.history.push('/home');
+                    } else {
+                        alert(res.msg);
+                    }
+                } else {
+                    alert('输入不合法，请检查!')
+                }
             }
         } catch (e) {
             console.log(e);

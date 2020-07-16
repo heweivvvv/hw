@@ -3,7 +3,7 @@ const recordFieldType = {
     consumeTypeId: 'required',
     payTypeId: 'required',
     count: 'required',
-    recordCreateTime: 'required',
+    recordCreateTime: 'auto',
     consumeData: 'required',
     remark: 'optional'
 };

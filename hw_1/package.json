@@ -1,44 +1,45 @@
 {
-    "name": "demo1",
-    "version": "1.0.0",
-    "description": "",
-    "main": "main.js",
-    "scripts": {
-        "watch-server": "webpack --config webpack.server.config.js --mode development --watch",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server --open --hot --mode development",
-        "startServer": "node dist/server.bundle.js"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "@babel/core": "7.10.2",
-        "@babel/plugin-transform-runtime": "7.10.4",
-        "@babel/preset-env": "7.10.2",
-        "@babel/preset-react": "7.10.1",
-        "babel-loader": "8.1.0",
-        "css-loader": "3.6.0",
-        "html-loader": "1.1.0",
-        "html-webpack-plugin": "4.3.0",
-        "sass-loader": "8.0.2",
-        "style-loader": "1.2.1",
-        "webpack": "4.43.0",
-        "webpack-cli": "3.3.11",
-        "webpack-dev-server": "3.11.0"
-    },
-    "dependencies": {
-        "body-parser": "1.19.0",
-        "cors": "2.8.5",
-        "express": "4.17.1",
-        "express-session": "1.17.1",
-        "js-cookie": "2.2.1",
-        "mongodb": "3.5.9",
-        "node-sass": "4.14.1",
-        "react": "16.13.1",
-        "react-dom": "16.13.1",
-        "react-router": "5.2.0",
-        "react-router-dom": "5.2.0",
-        "serve-static": "1.14.1",
-        "source-map-support": "0.5.19"
-    }
+  "name": "demo1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "watch-server": "webpack --config webpack.server.config.js --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open --hot --mode development",
+    "startServer": "node dist/server.bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "7.10.2",
+    "@babel/plugin-transform-runtime": "7.10.4",
+    "@babel/preset-env": "7.10.2",
+    "@babel/preset-react": "7.10.1",
+    "babel-loader": "8.1.0",
+    "css-loader": "3.6.0",
+    "html-loader": "1.1.0",
+    "html-webpack-plugin": "4.3.0",
+    "sass-loader": "8.0.2",
+    "style-loader": "1.2.1",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11",
+    "webpack-dev-server": "3.11.0"
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "express-session": "1.17.1",
+    "js-cookie": "2.2.1",
+    "mongodb": "3.5.9",
+    "mongoose": "^5.9.24",
+    "node-sass": "4.14.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "serve-static": "1.14.1",
+    "source-map-support": "0.5.19"
+  }
 }

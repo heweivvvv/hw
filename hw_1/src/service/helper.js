@@ -26,7 +26,7 @@ export default async function (url = '', data = {}, type = 'GET', method = 'fetc
             cache: "force-cache"
         };
 
-        if (type == 'POST') {
+        if (type === 'POST' || type === 'PUT') {
             requestConfig.body = JSON.stringify(data);
         }
 
