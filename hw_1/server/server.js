@@ -202,11 +202,8 @@ app.put('/api/modifyRecord/:id', async (req, res) => {
     }
 
     try {
-        console.log(1, recordId, record)
         await db.collection('consumeRecords').update({_id: recordId}, record);
-        console.log(2)
         const newRecord = await db.collection('consumeRecords').findOne({_id: recordId});
-        console.log(3, newRecord)
         if (newRecord) {
             newRecord.id = newRecord._id.toString();
             res.json({record: newRecord, result: true});

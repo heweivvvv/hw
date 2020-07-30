@@ -1,7 +1,7 @@
 import React from 'react'
 import View from './view.jsx';
 import {withRouter} from 'react-router';
-import helper from "../../service/helper";
+// import helper from "../../service/helper";
 import {getConsumeRecords, getConsumeTypeList, addRecord} from "../../service/home";
 
 class Home extends React.Component {
