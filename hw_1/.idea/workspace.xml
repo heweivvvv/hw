@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="388c7b1d-833d-46d7-b08e-2c6be9fd5dd3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/reducer_combine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/saga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/login/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/home/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home/container.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/login/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/container.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/login/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/work/soamView_V5.3.700.0" />
+    <property name="last_opened_file_path" value="F:/work/soamView" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -155,6 +146,7 @@
       <workItem from="1596008702695" duration="599000" />
       <workItem from="1596011500171" duration="2115000" />
       <workItem from="1596069986808" duration="10529000" />
+      <workItem from="1596156019599" duration="5464000" />
     </task>
     <servers />
   </component>
@@ -177,12 +169,12 @@
     </state>
     <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593580664149" />
     <state x="1969" y="246" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592639379797" />
-    <state x="443" y="156" key="FileChooserDialogImpl" timestamp="1596070035508">
+    <state x="443" y="156" key="FileChooserDialogImpl" timestamp="1596159060881">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="470" y="237" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593304554080" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593660780396" />
-    <state x="443" y="156" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596070035508" />
+    <state x="443" y="156" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596159060881" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594012155397" />
     <state width="1345" height="231" key="GridCell.Tab.0.bottom" timestamp="1596102013853">
       <screen x="0" y="0" width="1366" height="768" />

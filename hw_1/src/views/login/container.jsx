@@ -4,6 +4,7 @@ import {withRouter} from 'react-router';
 import service from '../../service/helper'
 import Cookies from 'js-cookie'
 import {buildCheckCode} from '../../utils/util'
+import {connect} from 'react-redux';
 
 class Login extends React.Component {
     constructor(props) {
@@ -87,6 +88,13 @@ class Login extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
+
+const
 
 
 export default withRouter(Login);
