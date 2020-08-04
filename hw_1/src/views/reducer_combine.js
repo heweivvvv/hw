@@ -1,6 +1,8 @@
 import {combineReducers} from 'redux';
-import * as loginReducer from './login/reducer.js';
+import {reducers as loginReducer} from './login/reducer.js';
+import {reducers as homeReducer} from './home/reducer.js';
 
-export const reducers = combineReducers({
-    login: loginReducer
-})
+export const reducers = {
+    login: combineReducers(loginReducer),
+    home: combineReducers(homeReducer)
+};

@@ -2,8 +2,8 @@ import React from 'react'
 import styles from './styles.scss';
 import PayRecord from '../../component/payRecord/container.jsx';
 
-let Component = ({records = [], goDetail, addRecord, deleteRecord}) => {
-
+let Component = ({recordsList = [], goDetail, addRecord, deleteRecord}) => {
+    // console.log(recordsList)
     return (
         <div className={styles.view}>
 
@@ -12,7 +12,8 @@ let Component = ({records = [], goDetail, addRecord, deleteRecord}) => {
             </div>
             <div className={styles.content}>
                 {
-                    records.map(r => (<PayRecord key={r.id} {...r} goDetail={goDetail} deleteRecord={deleteRecord}/>))
+                    recordsList.map(r => (
+                        <PayRecord key={r.id} {...r} goDetail={goDetail} deleteRecord={deleteRecord}/>))
                 }
             </div>
         </div>

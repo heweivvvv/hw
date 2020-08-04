@@ -1,51 +1,49 @@
 import React from 'react'
 import View from './view.jsx';
 import {withRouter} from 'react-router';
-// import helper from "../../service/helper";
-import {getConsumeRecords, getConsumeTypeList, addRecord} from "../../service/home";
+import {connect} from 'react-redux';
 
-class Home extends React.Component {
+class Component extends React.Component {
     constructor(props) {
         super(props);
-        this.props = props;
-        this.state = {
-            records: []
-        };
     }
 
-    async addRecord() {
-        this.props.history.push('/detail');
-    }
-
-    async componentDidMount() {
-        const res = await getConsumeRecords();
-        if (res.result) {
-            this.setState({records: res.records});
-        } else {
-            alert(res.msg);
+    componentDidMount() {
+        if (this.props.init) {
+            this.props.init()
         }
     }
 
-    goDetail(id) {
-        this.props.history.push('/detail/' + id);
-    }
-
-    async deleteRecord(id){
-
-    }
-
     render() {
-        const propsParams = {
-            ...this.props,
-            ...this.state,
-            goDetail: (id) => this.goDetail(id),
-            addRecord: async () => this.addRecord(),
-            deleteRecord: async (id) => this.deleteRecord(id)
-        };
-        return (<View {...propsParams}/>);
+        return (<View {...this.props}/>);
     }
-
-
 }
+
+const mapStateToProps = (state) => {
+
+    const stateObj = state.home;
+    return {
+        recordsList: stateObj.recordsList
+    }
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+
+    return {
+        init() {
+            dispatch({type: 'GETRECORDSLIST'});
+        },
+        goDetail(id) {
+            props.history.push('/detail/' + id);
+        },
+        addRecord() {
+            props.history.push('/detail');
+        },
+        deleteRecord(id) {
+        }
+    }
+};
+
+const Home = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export default withRouter(Home);

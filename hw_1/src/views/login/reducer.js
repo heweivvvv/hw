@@ -1,5 +1,5 @@
 import _ from 'lodash';
-
+import {ActionTypes} from './config';
 const initialState = {
     userName: '',
     password: '',
@@ -7,57 +7,40 @@ const initialState = {
     checkCodeText: ''
 };
 
-const userName = (state = initialState, action) => {
-    let newState = _.cloneDeep(state);
+const userName = (state = '', action) => {
 
-    switch (action.type) {
-        case 'CHANGE_USERNAME':
-            newState.userName = action.payload.userName;
-            break;
-        default:
-            break;
+    let payload = action.payload;
+    if(action.type === ActionTypes.changeUserName){
+        return payload.userName
     }
-    return {...newState};
+    return state;
 }
 
-const password = (state = initialState, action) => {
-    let newState = _.cloneDeep(state);
+const password = (state = '', action) => {
 
-    switch (action.type) {
-        case 'CHANGE_PASSWORD':
-            newState.password = action.payload.password;
-            break;
-        default:
-            break;
+    let payload = action.payload;
+    if(action.type === ActionTypes.changePassword){
+        return payload.password
     }
-    return {...newState};
+    return state;
 }
 
-const checkCode = (state = initialState, action) => {
-    let newState = _.cloneDeep(state);
-
-    switch (action.type) {
-        case 'CHANGE_CHECKCODE':
-            newState.checkCode = action.payload.checkCode;
-            break;
-        default:
-            break;
+const checkCode = (state = '', action) => {
+    let payload = action.payload;
+    if(action.type === ActionTypes.changeCheckCode){
+        return payload.checkCode
     }
-    return {...newState};
+    return state;
 }
 
-const checkCodeText = (state = initialState, action) => {
-    let newState = _.cloneDeep(state);
-
-    switch (action.type) {
-        case 'CHANGE_CHECKCODETEXT':
-            newState.checkCodeText = action.payload.checkCodeText;
-            break;
-        default:
-            break;
+const checkCodeText = (state = '', action) => {
+    let payload = action.payload;
+    if(action.type === ActionTypes.changeCheckCodeText){
+        return payload.checkCodeText
     }
-    return {...newState};
+    return state;
 }
 
-export {userName, password, checkCode, checkCodeText};
+export const reducers = {userName, password, checkCode, checkCodeText};
+
 

@@ -1,22 +1,14 @@
-import {applyMiddleware, compose, createStore} from 'redux';
+import {applyMiddleware, createStore, combineReducers} from 'redux';
 import createSagaMiddleWare from 'redux-saga';
-import {reducers as rootReducer} from './views/reducer_combine';
+import {reducers} from './views/reducer_combine';
 import {rootSaga} from './views/saga';
 
-export default function configureStore(preloadedState) {
 
-    // 创建saga中间件
-    const sagaMiddleware = createSagaMiddleWare();
-    const middleWares = [sagaMiddleware];
-    const middlewareEnhancer = applyMiddleware(...middleWares);
+// 创建saga中间件
+const sagaMiddleware = createSagaMiddleWare();
 
-    const enhancers = [middlewareEnhancer];
-    const composedEnhancers = compose(...enhancers);
+const middlewares = [sagaMiddleware];
 
-    // 创建存储容器
-    const store = createStore(rootReducer, preloadedState, composedEnhancers);
-    sagaMiddleware.run(rootSaga);
+window.store = createStore(combineReducers(reducers), applyMiddleware(...middlewares));
 
-    return store;
-
-}
+sagaMiddleware.run(rootSaga);

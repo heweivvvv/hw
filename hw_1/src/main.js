@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {App} from "./App.jsx";
-import createStore  from './store';
+import './store';
 
-const store = createStore();
+const store = window.store;
 
 ReactDOM.render(<App store={store}/>, document.getElementById('app'));
