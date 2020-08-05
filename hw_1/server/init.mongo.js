@@ -1,4 +1,8 @@
-db = new Mongo().getDB("hw1");
+const name = 'root';
+const pw ='hewei@1994'
+db = new Mongo('81.68.118.193:27017').getDB("hw1");
+// console.log(db)
+db.auth(name, pw);
 
 db.userInfo.remove({});
 

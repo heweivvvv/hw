@@ -1,51 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import View from './view.jsx';
 import {withRouter} from 'react-router';
 import {addRecord, getConsumeTypeList, getPayTypeList, modifyRecord} from "../../service/home";
 import {getOneRecord} from "../../service/detial";
+import {routeId} from './config';
+import {connect} from 'react-redux';
 
-class Detail extends Component {
+class Component extends React.Component {
     constructor(props) {
         super(props);
-        this.props = props;
-        const id = this.props.match.params.id;
-        // const popState = this.props.location.state || {};
-        this.state = {
-            title: '',
-            consumeTypeId: '',
-            payTypeId: '',
-            consumeData: '',
-            count: 0,
-            remark: '',
-            id: id || '',
-            payTypes: [],
-            consumeTypes: [],
-            editing: id ? false : true
-        };
     }
 
-    async componentDidMount() {
-        try {
-            const consumeTypes = await getConsumeTypeList();
-            const payTypes = await getPayTypeList();
-            if (consumeTypes[0] && payTypes[0]) {
-                this.setState({
-                    consumeTypes,
-                    payTypes,
-                    consumeTypeId: consumeTypes[0].typeId,
-                    payTypeId: payTypes[0].typeId
-                });
-            }
-            if (this.state.id) {
-                const {record, result, msg} = await getOneRecord({id: this.state.id});
-                if (result && record) {
-                    this.setState(record);
-                } else {
-                    alert(msg);
-                }
-            }
-        } catch (e) {
-            console.log(e);
+    componentDidMount() {
+        if (this.props.init) {
+            this.props.init();
         }
     }
 
@@ -144,22 +112,35 @@ class Detail extends Component {
     }
 
     render() {
-        const propsPrams = {
-            ...this.props,
-            ...this.state,
-            toSave: async () => this.toSave(),
-            toEdit: () => this.toEdit(),
-            goBack: () => this.goBack(),
-            changePayDesc: (e) => this.changePayDesc(e),
-            consumeTypeIdChange: (e) => this.consumeTypeIdChange(e),
-            payTypeChange: (e) => this.payTypeChange(e),
-            consumeDataChange: (e) => this.consumeDataChange(e),
-            countChange: (e) => this.countChange(e),
-            remarkChange: (e) => this.remarkChange(e)
-        };
-        return <View {...propsPrams}/>
+        return <View {...this.props}/>
     }
 
 }
+
+const mapStateToProps = (state) => {
+    const stateObj = state[routeId];
+    return {
+        title: stateObj.title,
+        consumeTypeId: stateObj.consumeTypeId,
+        payTypeId: stateObj.payTypeId,
+        consumeData: stateObj.consumeData,
+        count: stateObj.count,
+        remark: stateObj.remark,
+        id: stateObj.id,
+        payTypes: stateObj.payTypes,
+        consumeTypes: stateObj.consumeTypes,
+        editing: stateObj.editing
+    }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        init() {
+            dispatch({type: 'DETAIL_INIT', payload: {id: props.match.params.id}})
+        }
+    }
+}
+
+const Detail = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export default withRouter(Detail);
