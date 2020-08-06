@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="388c7b1d-833d-46d7-b08e-2c6be9fd5dd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/init.mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/init.mongo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/detail/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/container.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/home/redux.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/login/redux.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/reducer_combine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reducer_combine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/saga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/笔记积累.md" beforeDir="false" afterPath="$PROJECT_DIR$/笔记积累.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/work/soamView" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -58,7 +53,7 @@
       <recent name="F:\demo\hw_1" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.startServer">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -154,7 +149,8 @@
       <workItem from="1596415227390" duration="4855000" />
       <workItem from="1596502528789" duration="16680000" />
       <workItem from="1596531226252" duration="1992000" />
-      <workItem from="1596587899993" duration="12491000" />
+      <workItem from="1596587899993" duration="13382000" />
+      <workItem from="1596676282043" duration="8663000" />
     </task>
     <servers />
   </component>
@@ -184,29 +180,29 @@
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593660780396" />
     <state x="443" y="156" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596587924279" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594012155397" />
-    <state width="1345" height="231" key="GridCell.Tab.0.bottom" timestamp="1596620729424">
+    <state width="1345" height="231" key="GridCell.Tab.0.bottom" timestamp="1596707634427">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="231" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596620729424" />
+    <state width="1345" height="231" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596707634427" />
     <state width="1328" height="213" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594886664510" />
-    <state width="1345" height="231" key="GridCell.Tab.0.center" timestamp="1596620729424">
+    <state width="1345" height="231" key="GridCell.Tab.0.center" timestamp="1596707634426">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="231" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596620729424" />
+    <state width="1345" height="231" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596707634426" />
     <state width="1328" height="213" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594886664510" />
-    <state width="1345" height="231" key="GridCell.Tab.0.left" timestamp="1596620729424">
+    <state width="1345" height="231" key="GridCell.Tab.0.left" timestamp="1596707634426">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="231" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596620729424" />
+    <state width="1345" height="231" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596707634426" />
     <state width="1328" height="213" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594886664510" />
-    <state width="1345" height="231" key="GridCell.Tab.0.right" timestamp="1596620729424">
+    <state width="1345" height="231" key="GridCell.Tab.0.right" timestamp="1596707634427">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="231" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596620729424" />
+    <state width="1345" height="231" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596707634427" />
     <state width="1328" height="213" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594886664510" />
     <state x="1625" y="7" key="SettingsEditor" timestamp="1593660791172">
       <screen x="1366" y="0" width="1920" height="1080" />

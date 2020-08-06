@@ -8,7 +8,14 @@ import {MongoClient} from 'mongodb';
 let appModule = require('./server.js');
 let db, server;
 
-MongoClient.connect('mongodb://81.68.118.193/hw1', {
+const serverUrl ='81.68.118.193:27010';
+const database='hw1'
+const user='root'
+const password= encodeURIComponent('hewei@1994');
+
+const dbUrl = `mongodb://${user}:${password}@${serverUrl}/${database}`;
+
+MongoClient.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
