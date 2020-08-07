@@ -3,7 +3,7 @@ import View from './view.jsx';
 import {withRouter} from 'react-router';
 import {addRecord, getConsumeTypeList, getPayTypeList, modifyRecord} from "../../service/home";
 import {getOneRecord} from "../../service/detial";
-import {routeId} from './config';
+import {ActionTypes, routeId} from './config';
 import {connect} from 'react-redux';
 
 class Component extends React.Component {
@@ -15,100 +15,6 @@ class Component extends React.Component {
         if (this.props.init) {
             this.props.init();
         }
-    }
-
-    toEdit() {
-        this.setState({editing: true});
-    }
-
-    async toSave() {
-        // 成功
-        try {
-            if (!this.state.id) {
-                const record = {
-                    title: this.state.title,
-                    consumeTypeId: this.state.consumeTypeId,
-                    payTypeId: this.state.payTypeId,
-                    consumeData: this.state.consumeData,
-                    count: parseInt(this.state.count, 10).toFixed(2),
-                    remark: this.state.remark
-                };
-
-                if (this.checkRecord(record)) {
-                    const res = await addRecord(record);
-                    if (res.result) {
-                        this.props.history.push('/home');
-                    } else {
-                        alert(res.msg);
-                    }
-                } else {
-                    alert('输入不合法，请检查!')
-                }
-
-            } else {
-                const record = {
-                    title: this.state.title,
-                    consumeTypeId: this.state.consumeTypeId,
-                    payTypeId: this.state.payTypeId,
-                    consumeData: this.state.consumeData,
-                    count: parseInt(this.state.count, 10).toFixed(2),
-                    remark: this.state.remark
-                };
-                if (this.checkRecord(record)) {
-                    const res = await modifyRecord(record, this.state.id);
-                    if (res.result) {
-                        this.props.history.push('/home');
-                    } else {
-                        alert(res.msg);
-                    }
-                } else {
-                    alert('输入不合法，请检查!')
-                }
-            }
-        } catch (e) {
-            console.log(e);
-        }
-    }
-
-    // 检查输入信息，待实现 显示界面可以在输入错误时显示错误
-    checkRecord(record) {
-        let result = true;
-        const checks = ['title', 'consumeData', 'count'];
-        checks.forEach(k => {
-            if (!record[k]) {
-                result = false;
-            }
-        });
-        return result;
-    }
-
-    goBack(e) {
-        this.props.history.push('/home');
-    }
-
-    changePayDesc(e) {
-        this.setState({title: e.target.value});
-    }
-
-    consumeTypeIdChange(e) {
-        this.setState({consumeTypeId: e.target.value});
-    }
-
-    payTypeChange(e) {
-        this.setState({payTypeId: e.target.value});
-    }
-
-    consumeDataChange(e) {
-        console.log(e)
-        this.setState({consumeData: e.target.value});
-    }
-
-    countChange(e) {
-        this.setState({count: e.target.value});
-    }
-
-    remarkChange(e) {
-        this.setState({remark: e.target.value});
     }
 
     render() {
@@ -131,15 +37,42 @@ const mapStateToProps = (state) => {
         consumeTypes: stateObj.consumeTypes,
         editing: stateObj.editing
     }
-}
+};
 
 const mapDispatchToProps = (dispatch, props) => {
     return {
         init() {
             dispatch({type: 'DETAIL_INIT', payload: {id: props.match.params.id}})
+        },
+        changePayDesc(e) {
+            dispatch({type: ActionTypes.changeTitle, payload: {title: e.target.value}});
+        },
+        consumeTypeIdChange(e) {
+            dispatch({type: ActionTypes.changeConsumeTypeId, payload: {consumeTypeId: e.target.value}});
+        },
+        payTypeChange(e) {
+            dispatch({type: ActionTypes.changePayTypeId, payload: {payTypeId: e.target.value}});
+        },
+        consumeDataChange(e) {
+            dispatch({type: ActionTypes.changeConsumeData, payload: {consumeData: e.target.value}});
+        },
+        countChange(e) {
+            dispatch({type: ActionTypes.changeCount, payload: {count: e.target.value}});
+        },
+        remarkChange(e) {
+            dispatch({type: ActionTypes.changeRemark, payload: {remark: e.target.value}});
+        },
+        toEdit() {
+            dispatch({type: ActionTypes.changeEditing, payload: {editing: true}});
+        },
+        goBack(e) {
+            props.history.push('/home');
+        },
+        toSave() {
+            dispatch({type: 'SAVE_RECORD'});
         }
     }
-}
+};
 
 const Detail = connect(mapStateToProps, mapDispatchToProps)(Component);
 

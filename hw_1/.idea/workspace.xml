@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="388c7b1d-833d-46d7-b08e-2c6be9fd5dd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/views/authRouter/container.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/detail/helper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/init.mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/init.mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/payRecord/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/payRecord/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/authRouter/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/authRouter/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/authRouter/view.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/authRouter/view.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/detail/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/detail/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/container.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/detail/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/detail/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/detail/view.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/view.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/home/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home/container.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login/view.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/view.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/笔记积累.md" beforeDir="false" afterPath="$PROJECT_DIR$/笔记积累.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +52,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pro-mern-stack-master" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -151,6 +168,7 @@
       <workItem from="1596531226252" duration="1992000" />
       <workItem from="1596587899993" duration="13382000" />
       <workItem from="1596676282043" duration="8663000" />
+      <workItem from="1596760781094" duration="18267000" />
     </task>
     <servers />
   </component>
@@ -173,51 +191,51 @@
     </state>
     <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593580664149" />
     <state x="1969" y="246" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592639379797" />
-    <state x="443" y="156" key="FileChooserDialogImpl" timestamp="1596587924279">
+    <state x="443" y="156" key="FileChooserDialogImpl" timestamp="1596783959863">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="470" y="237" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593304554080" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593660780396" />
-    <state x="443" y="156" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596587924279" />
+    <state x="443" y="156" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596783959863" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594012155397" />
-    <state width="1345" height="231" key="GridCell.Tab.0.bottom" timestamp="1596707634427">
+    <state width="1345" height="231" key="GridCell.Tab.0.bottom" timestamp="1596792912548">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="231" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596707634427" />
+    <state width="1345" height="231" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596792912548" />
     <state width="1328" height="213" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594886664510" />
-    <state width="1345" height="231" key="GridCell.Tab.0.center" timestamp="1596707634426">
+    <state width="1345" height="231" key="GridCell.Tab.0.center" timestamp="1596792912548">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="231" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596707634426" />
+    <state width="1345" height="231" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596792912548" />
     <state width="1328" height="213" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594886664510" />
-    <state width="1345" height="231" key="GridCell.Tab.0.left" timestamp="1596707634426">
+    <state width="1345" height="231" key="GridCell.Tab.0.left" timestamp="1596792912548">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="231" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596707634426" />
+    <state width="1345" height="231" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596792912548" />
     <state width="1328" height="213" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594886664510" />
-    <state width="1345" height="231" key="GridCell.Tab.0.right" timestamp="1596707634427">
+    <state width="1345" height="231" key="GridCell.Tab.0.right" timestamp="1596792912548">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1345" height="311" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593670863883" />
-    <state width="1345" height="231" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596707634427" />
+    <state width="1345" height="231" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596792912548" />
     <state width="1328" height="213" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594886664510" />
     <state x="1625" y="7" key="SettingsEditor" timestamp="1593660791172">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="184" y="5" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592875221227" />
     <state x="1625" y="7" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593660791172" />
-    <state x="359" y="117" width="647" height="534" key="find.popup" timestamp="1596531045700">
+    <state x="359" y="117" width="647" height="534" key="find.popup" timestamp="1596786124221">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="359" y="117" width="647" height="534" key="find.popup/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596531045700" />
-    <state x="339" y="171" key="run.anything.popup" timestamp="1594801644801">
+    <state x="359" y="117" width="647" height="534" key="find.popup/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596786124221" />
+    <state x="339" y="171" key="run.anything.popup" timestamp="1596786456170">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1592792929760" />
-    <state x="339" y="171" key="run.anything.popup/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1594801644801" />
+    <state x="339" y="171" key="run.anything.popup/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596786456170" />
     <state x="346" y="52" width="672" height="716" key="search.everywhere.popup" timestamp="1594889158134">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

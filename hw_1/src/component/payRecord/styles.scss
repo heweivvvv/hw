@@ -37,11 +37,11 @@
     .edit {
         margin: auto 0;
 
-        button{
+        button {
             @include button('50px', '26px');
+            margin-right: 20px;
             border-radius: 3px;
             background-color: deepskyblue;
-           // background-color: black;
         }
     }
 }

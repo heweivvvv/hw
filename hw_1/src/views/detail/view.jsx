@@ -23,8 +23,8 @@ const component = ({
                        remarkChange,
                    }) => {
 
-    const consumeType = consumeTypeId && consumeTypes.length > 0 ? consumeTypes.find(c => c.typeId === consumeTypeId) : {};
-    const payType = payTypeId && payTypes.length > 0 ? payTypes.find(c => c.typeId === payTypeId) : {};
+    const consumeType = consumeTypes.find(c => c.typeId === consumeTypeId) || {};
+    const payType = payTypes.find(c => c.typeId === payTypeId) || {};
 
     return (
         <div className={styles.view}>
@@ -33,7 +33,7 @@ const component = ({
                     <div className={styles.recodeInfoName}>
                         描述
                     </div>
-                    <div className={`${styles.recodeInfoValue} ${!title ? styles.illegalInput: ''}`}>
+                    <div className={`${styles.recodeInfoValue} ${!title ? styles.illegalInput : ''}`}>
                         {
                             editing ? <input onChange={e => changePayDesc(e)} value={title}></input> :
                                 <span>{title}</span>
@@ -46,7 +46,7 @@ const component = ({
                     </div>
                     <div className={styles.recodeInfoValue}>
                         {
-                            editing ? <select onChange={(e) => consumeTypeIdChange(e)} value={consumeTypeId}>
+                            editing ? <select onChange={e => consumeTypeIdChange(e)} value={consumeTypeId}>
                                     {
                                         consumeTypes.map((c, index) => <option key={`consumeType_${index}`}
                                                                                value={c.typeId}>{c.name}</option>)
@@ -67,7 +67,7 @@ const component = ({
                             editing ? <select onChange={e => payTypeChange(e)} value={payTypeId}>
                                     {
                                         payTypes.map((c, index) => <option key={`payTypes_${index}`}
-                                                                               value={c.typeId}>{c.name}</option>)
+                                                                           value={c.typeId}>{c.name}</option>)
                                     }
                                 </select> :
                                 <span> {payType.name || ''}</span>
@@ -79,7 +79,7 @@ const component = ({
                     <div className={styles.recodeInfoName}>
                         时间
                     </div>
-                    <div className={`${styles.recodeInfoValue} ${!consumeData ? styles.illegalInput: ''}`}>
+                    <div className={`${styles.recodeInfoValue} ${!consumeData ? styles.illegalInput : ''}`}>
                         {
                             editing ?
                                 <input onChange={e => consumeDataChange(e)} type='date' value={consumeData}></input> :
@@ -94,7 +94,7 @@ const component = ({
                     <div className={styles.recodeInfoName}>
                         金额
                     </div>
-                    <div className={`${styles.recodeInfoValue} ${!count ? styles.illegalInput: ''}`}>
+                    <div className={`${styles.recodeInfoValue} ${!count ? styles.illegalInput : ''}`}>
                         {
                             editing ? <input type="number" onChange={e => countChange(e)} value={count}></input> :
                                 <span> {count}</span>

@@ -38,6 +38,7 @@ app.all('/api/*', (req, res, next) => {
             res.status(403).send({
                 result: false,
                 msg: 'You are not authorized to perform the operation',
+                code: '0001'
             });
         } else {
             next();
@@ -115,22 +116,7 @@ app.get('/api/getConsumeTypeList', async (req, res) => {
  */
 app.post('/api/getConsumeRecords', async (req, res) => {
     try {
-        let consumeTypeMap = {};
-        let payTypeMap = {};
-        const records = await db.collection('consumeRecords').find().toArray();
-        const consumeTypeList = await getConsumeTypeList();
-        consumeTypeList.forEach(t => {
-            consumeTypeMap[t.typeId] = t.name;
-        });
-        const payTypeList = await getPayTypeList();
-        payTypeList.forEach(t => {
-            payTypeMap[t.typeId] = t.name;
-        });
-        records.forEach(r => {
-            r.consumeTypeText = consumeTypeMap[r.consumeTypeId];
-            r.payTypeText = payTypeMap[r.payTypeId];
-            r.id = String(r._id);
-        });
+        const records = await getConsumeRecords();
         res.json({records, result: true});
     } catch (e) {
         res.json({msg: e, result: false});
@@ -184,6 +170,9 @@ app.post('/api/getOneRecord', async (req, res) => {
     }
 });
 
+/**
+ * @desc 修改记录
+ */
 app.put('/api/modifyRecord/:id', async (req, res) => {
     let recordId;
     try {
@@ -214,6 +203,52 @@ app.put('/api/modifyRecord/:id', async (req, res) => {
         res.json({msg: JSON.stringify(e), result: false});
     }
 });
+
+/**
+ * @desc 删除记录
+ */
+app.delete('/api/deleteRecord/:id', async (req, res) => {
+    try {
+        const recordId = new ObjectId(req.params.id);
+        const delRecord = await db.collection('consumeRecords').deleteOne({_id: recordId});
+        if (delRecord.result.n === 1) {
+            const records = await getConsumeRecords();
+            res.json({records, result: true});
+        } else {
+            res.json({result: false});
+        }
+    } catch (e) {
+        res.json({result: false, msg: JSON.stringify(e)});
+    }
+});
+
+/**
+ * @desc 查找并解析所有记录
+ * @returns {Promise<*[]|any>}
+ */
+async function getConsumeRecords() {
+    try {
+        let consumeTypeMap = {};
+        let payTypeMap = {};
+        const records = await db.collection('consumeRecords').find().toArray();
+        const consumeTypeList = await getConsumeTypeList();
+        consumeTypeList.forEach(t => {
+            consumeTypeMap[t.typeId] = t.name;
+        });
+        const payTypeList = await getPayTypeList();
+        payTypeList.forEach(t => {
+            payTypeMap[t.typeId] = t.name;
+        });
+        records.forEach(r => {
+            r.consumeTypeText = consumeTypeMap[r.consumeTypeId];
+            r.payTypeText = payTypeMap[r.payTypeId];
+            r.id = String(r._id);
+        });
+        return records;
+    } catch (e) {
+        return [];
+    }
+}
 
 function setDb(newDb) {
     db = newDb;

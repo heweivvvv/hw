@@ -40,6 +40,7 @@ const mapDispatchToProps = (dispatch, props) => {
             props.history.push('/detail');
         },
         deleteRecord(id) {
+            dispatch({type: 'DELETERECORD', payload: {id}});
         }
     }
 };

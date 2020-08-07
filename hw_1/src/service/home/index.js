@@ -22,3 +22,7 @@ export async function addRecord(params = {}) {
 export async function modifyRecord(params = {}, id) {
     return service('/api/modifyRecord/' + id, params, 'PUT');
 }
+
+export async function deleteRecordAPI(id) {
+    return service('/api/deleteRecord/' + id, {}, 'DELETE');
+}

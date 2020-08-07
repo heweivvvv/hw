@@ -8,12 +8,12 @@ const id = (state = '', action) => {
     }
 
     return state;
-}
+};
 
 const consumeTypeId = (state = '', action) => {
     const payload = action.payload;
 
-    if (action.type === ActionTypes.initRecord) {
+    if (action.type === ActionTypes.initRecord || action.type === ActionTypes.changeConsumeTypeId) {
         return payload.consumeTypeId
     }
 
@@ -23,7 +23,7 @@ const consumeTypeId = (state = '', action) => {
 const title = (state = '', action) => {
     const payload = action.payload;
 
-    if (action.type === ActionTypes.initRecord) {
+    if (action.type === ActionTypes.initRecord || action.type === ActionTypes.changeTitle) {
         return payload.title
     }
 
@@ -33,7 +33,7 @@ const title = (state = '', action) => {
 const payTypeId = (state = '', action) => {
     const payload = action.payload;
 
-    if (action.type === ActionTypes.initRecord) {
+    if (action.type === ActionTypes.initRecord || action.type === ActionTypes.changePayTypeId) {
         return payload.payTypeId
     }
 
@@ -43,7 +43,7 @@ const payTypeId = (state = '', action) => {
 const consumeData = (state = '', action) => {
     const payload = action.payload;
 
-    if (action.type === ActionTypes.initRecord) {
+    if (action.type === ActionTypes.initRecord || action.type === ActionTypes.changeConsumeData) {
         return payload.consumeData
     }
 
@@ -53,7 +53,7 @@ const consumeData = (state = '', action) => {
 const count = (state = 0, action) => {
     const payload = action.payload;
 
-    if (action.type === ActionTypes.initRecord) {
+    if (action.type === ActionTypes.initRecord || action.type === ActionTypes.changeCount) {
         return payload.count
     }
 
@@ -63,7 +63,7 @@ const count = (state = 0, action) => {
 const remark = (state = '', action) => {
     const payload = action.payload;
 
-    if (action.type === ActionTypes.initRecord) {
+    if (action.type === ActionTypes.initRecord || action.type === ActionTypes.changeRemark) {
         return payload.remark
     }
 
@@ -73,7 +73,7 @@ const remark = (state = '', action) => {
 const editing = (state = false, action) => {
     const payload = action.payload;
 
-    if (action.type === ActionTypes.initRecord) {
+    if (action.type === ActionTypes.initRecord || action.type === ActionTypes.changeEditing) {
         return payload.editing
     }
 

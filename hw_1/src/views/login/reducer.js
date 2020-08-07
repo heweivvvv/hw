@@ -1,11 +1,4 @@
-import _ from 'lodash';
 import {ActionTypes} from './config';
-const initialState = {
-    userName: '',
-    password: '',
-    checkCode: '',
-    checkCodeText: ''
-};
 
 const userName = (state = '', action) => {
 
@@ -14,7 +7,7 @@ const userName = (state = '', action) => {
         return payload.userName
     }
     return state;
-}
+};
 
 const password = (state = '', action) => {
 
@@ -23,7 +16,7 @@ const password = (state = '', action) => {
         return payload.password
     }
     return state;
-}
+};
 
 const checkCode = (state = '', action) => {
     let payload = action.payload;
@@ -31,7 +24,7 @@ const checkCode = (state = '', action) => {
         return payload.checkCode
     }
     return state;
-}
+};
 
 const checkCodeText = (state = '', action) => {
     let payload = action.payload;
@@ -39,8 +32,14 @@ const checkCodeText = (state = '', action) => {
         return payload.checkCodeText
     }
     return state;
-}
+};
 
-export const reducers = {userName, password, checkCode, checkCodeText};
+const userInfo = (state = {}, action) => {
+    let payload = action.payload;
+    if(action.type === ActionTypes.setUserInfo){
+        return payload.userInfo
+    }
+    return state;
+};
 
-
+export const reducers = {userName, password, checkCode, checkCodeText, userInfo};
