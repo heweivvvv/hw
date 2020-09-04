@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="388c7b1d-833d-46d7-b08e-2c6be9fd5dd3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/authRouter/container.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/detail/helper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/payRecord/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/payRecord/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/authRouter/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/authRouter/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/authRouter/view.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/authRouter/view.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/detail/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/detail/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/container.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/detail/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/detail/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/detail/view.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/detail/view.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/home/container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home/container.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/login/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/login/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/login/view.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/view.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/saga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/笔记积累.md" beforeDir="false" afterPath="$PROJECT_DIR$/笔记积累.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/笔记.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pro-mern-stack-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -169,6 +151,10 @@
       <workItem from="1596587899993" duration="13382000" />
       <workItem from="1596676282043" duration="8663000" />
       <workItem from="1596760781094" duration="18267000" />
+      <workItem from="1597020269735" duration="2572000" />
+      <workItem from="1597106177466" duration="2246000" />
+      <workItem from="1598494925144" duration="5009000" />
+      <workItem from="1598584634136" duration="1413000" />
     </task>
     <servers />
   </component>
@@ -191,12 +177,12 @@
     </state>
     <state x="429" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593580664149" />
     <state x="1969" y="246" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1592639379797" />
-    <state x="443" y="156" key="FileChooserDialogImpl" timestamp="1596783959863">
+    <state x="443" y="156" key="FileChooserDialogImpl" timestamp="1597106323786">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="470" y="237" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1593304554080" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1593660780396" />
-    <state x="443" y="156" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1596783959863" />
+    <state x="443" y="156" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@0.0.1366.768" timestamp="1597106323786" />
     <state x="2005" y="430" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1594012155397" />
     <state width="1345" height="231" key="GridCell.Tab.0.bottom" timestamp="1596792912548">
       <screen x="0" y="0" width="1366" height="768" />
